@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FINLINGO | Plataforma de Ciudadanía Digital</title>
+    <title>FINLINGO | Plataforma Educativa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -23,236 +23,181 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,800;1,800&display=swap');
         
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #F8FAFC; 
-            color: #1A2B6D; 
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FDFDFF; color: #1A2B6D; }
+        h1, h2, h3, h4, span, p, button, li, div { font-style: italic; font-weight: 800; }
         
-        h1, h2, h3, h4, p, span, a, button, li { 
-            font-style: italic; 
-            font-weight: 800; 
-        }
+        .brand-gradient { background: linear-gradient(135deg, #2D5CFE 0%, #8E44FF 50%, #E040FB 100%); }
+        
+        .session-content { display: none; }
+        .session-content.active { display: block; animation: fadeIn 0.3s ease; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .brand-gradient { 
-            background: linear-gradient(135deg, #2D5CFE 0%, #8E44FF 50%, #E040FB 100%); 
-        }
-
-        .session-content {
-            display: none;
-            overflow: hidden;
-        }
-
-        .session-content.active {
-            display: block;
-            animation: slideDown 0.4s ease-out;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .logo-box {
+        /* Estilo del Logo tipo Imagen */
+        .fin-logo {
             background: #1A2B6D;
-            padding: 8px 16px;
-            border-radius: 12px;
             color: white;
-            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 15px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(26, 43, 109, 0.2);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="bg-white border-b-4 border-fin-blue sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="logo-box">
-                    <span class="text-2xl tracking-tighter">FINLINGO</span>
-                </div>
-                <div class="hidden sm:block">
-                    <p class="text-[9px] uppercase tracking-[0.2em] leading-none opacity-70">Aprende el idioma<br>del dinero</p>
-                </div>
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 px-6 py-4 shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="fin-logo">
+                <span class="text-2xl tracking-tighter leading-none">FINLINGO</span>
+                <span class="text-[7px] uppercase tracking-[0.4em] mt-1">Idioma del dinero</span>
             </div>
-            <div class="bg-fin-pink text-white text-[10px] px-4 py-2 rounded-full uppercase italic animate-pulse">
-                ¡FINLINGO recién está empezando!
+            <div class="text-right">
+                <p class="text-[10px] text-fin-blue uppercase tracking-widest">¡FINLINGO recién está empezando!</p>
             </div>
         </div>
     </nav>
 
-    <header class="brand-gradient py-16 text-white text-center px-6">
-        <h1 class="text-4xl md:text-6xl tracking-tighter mb-4 uppercase">Ciudadanía Digital</h1>
-        <p class="text-lg opacity-90 max-w-2xl mx-auto">Curso interactivo de 5 sesiones para adolescentes</p>
+    <header class="brand-gradient py-20 px-6 text-white text-center relative overflow-hidden">
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl uppercase tracking-tighter mb-6 leading-none">¡HAGAMOS <br><span class="text-fin-dark">HISTORIA!</span></h1>
+            <div class="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-[3rem] mt-8 shadow-2xl">
+                <h3 class="text-3xl mb-2 uppercase">Bienvenida</h3>
+                <p class="text-lg opacity-90 italic">Estamos listos para empezar este viaje educativo de 4 sesiones fundamentales de Ciudadanía Digital.</p>
+                <p class="mt-4 text-xs uppercase tracking-[0.5em] text-fin-dark">Transformando el futuro hoy</p>
+            </div>
+        </div>
     </header>
 
-    <main class="max-w-5xl mx-auto py-12 px-4">
-        <div class="grid gap-6">
+    <main class="max-w-5xl mx-auto py-16 px-6 space-y-8">
 
-            <div class="bg-white rounded-[2rem] shadow-xl border-2 border-fin-blue overflow-hidden">
-                <button onclick="toggleSession('s0')" class="w-full px-8 py-6 flex justify-between items-center bg-slate-50">
-                    <div class="flex items-center gap-4">
-                        <i class="fa-solid fa-star text-fin-blue text-2xl"></i>
-                        <h2 class="text-xl uppercase tracking-tighter">Sesión 0: El Inicio del Viaje</h2>
-                    </div>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div id="s0" class="session-content p-8 bg-white">
-                    <h3 class="text-fin-blue mb-4 uppercase text-2xl">¡HAGAMOS HISTORIA!</h3>
-                    <p class="mb-4 text-gray-700">Bienvenido a FINLINGO. En este curso de 4 sesiones fundamentales (y una de cierre), aprenderás a ser un ciudadano digital ejemplar.</p>
-                    <div class="bg-fin-dark text-white p-6 rounded-3xl">
-                        <p class="italic">"Estamos listos para empezar este viaje educativo. No olvides: ¡FINLINGO recién está empezando!"</p>
-                    </div>
+        <div class="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden">
+            <button onclick="toggleSession('s1')" class="w-full px-8 py-8 flex justify-between items-center group">
+                <div class="flex items-center gap-6">
+                    <span class="w-14 h-14 bg-fin-blue text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">1</span>
+                    <h2 class="text-2xl uppercase tracking-tighter text-fin-blue group-hover:translate-x-2 transition-transform">Comparte con cuidado</h2>
                 </div>
-            </div>
-
-            <div class="bg-white rounded-[2rem] shadow-lg border border-gray-100 overflow-hidden">
-                <button onclick="toggleSession('s1')" class="w-full px-8 py-6 flex justify-between items-center">
-                    <div class="flex items-center gap-4">
-                        <span class="bg-fin-blue text-white w-10 h-10 rounded-full flex items-center justify-center">1</span>
-                        <h2 class="text-xl uppercase tracking-tighter">Comparte con cuidado</h2>
+                <i class="fa-solid fa-plus text-fin-blue text-xl"></i>
+            </button>
+            <div id="s1" class="session-content p-10 bg-slate-50 border-t">
+                <div class="prose max-w-none space-y-6">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border-l-4 border-fin-blue">
+                        <h4 class="text-fin-blue uppercase mb-2">Desarrollo: Montaña Sensata</h4>
+                        <p class="text-sm text-gray-600">Aprenderemos la importancia de la Huella Digital. Todo lo que compartimos en internet (fotos, comentarios, likes) crea un perfil nuestro que dura para siempre. La clave es: ¡Piénsalo antes de compartir!</p>
                     </div>
-                    <i class="fa-solid fa-chevron-down text-fin-blue"></i>
-                </button>
-                <div id="s1" class="session-content p-8 bg-slate-50 border-t">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-fin-blue uppercase mb-2">Desarrollo de la Sesión:</h4>
-                            <ul class="space-y-2 text-sm text-gray-600 list-disc pl-5">
-                                <li><strong>Huella Digital:</strong> Todo lo que publicas deja rastro.</li>
-                                <li><strong>Privacidad:</strong> Aprende a configurar quién ve tus fotos.</li>
-                                <li><strong>Consecuencias:</strong> Lo que compartes hoy afecta tu futuro.</li>
-                            </ul>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-fin-dark text-white p-6 rounded-3xl">
+                            <h5 class="text-xs uppercase mb-2 text-fin-blue italic">Actividad Interactiva:</h5>
+                            <p class="text-sm mb-4">Cruza la montaña decidiendo qué información es segura.</p>
+                            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata" target="_blank" class="inline-block w-full text-center bg-fin-blue py-3 rounded-xl uppercase text-xs">Jugar Montaña Sensata</a>
                         </div>
-                        <div class="flex flex-col gap-3">
-                            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata" target="_blank" class="bg-fin-blue text-white p-4 rounded-2xl text-center shadow-lg hover:scale-105 transition">
-                                <i class="fa-solid fa-gamepad mr-2"></i> IR A MONTAÑA SENSATA
-                            </a>
+                        <div class="bg-white p-6 rounded-3xl border border-gray-200">
+                            <h5 class="text-xs uppercase mb-2 text-fin-blue italic">Próximo paso:</h5>
+                            <p class="text-sm">Identifica riesgos en la siguiente sesión.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="bg-white rounded-[2rem] shadow-lg border border-gray-100 overflow-hidden">
-                <button onclick="toggleSession('s2')" class="w-full px-8 py-6 flex justify-between items-center">
-                    <div class="flex items-center gap-4">
-                        <span class="bg-fin-purple text-white w-10 h-10 rounded-full flex items-center justify-center">2</span>
-                        <h2 class="text-xl uppercase tracking-tighter">No caigas en trampas</h2>
-                    </div>
-                    <i class="fa-solid fa-chevron-down text-fin-purple"></i>
-                </button>
-                <div id="s2" class="session-content p-8 bg-slate-50 border-t">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-fin-purple uppercase mb-2">Desarrollo de la Sesión:</h4>
-                            <ul class="space-y-2 text-sm text-gray-600 list-disc pl-5">
-                                <li><strong>Phishing:</strong> Correos que parecen reales pero son robos.</li>
-                                <li><strong>Verificación:</strong> Aprende a mirar los links antes de dar clic.</li>
-                                <li><strong>Noticias Falsas:</strong> No todo lo que brilla en TikTok es verdad.</li>
-                            </ul>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <a href="https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad" target="_blank" class="bg-fin-purple text-white p-4 rounded-2xl text-center shadow-lg hover:scale-105 transition">
-                                <i class="fa-solid fa-gamepad mr-2"></i> IR A RÍO DE REALIDAD
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-[2rem] shadow-lg border border-gray-100 overflow-hidden">
-                <button onclick="toggleSession('s3')" class="w-full px-8 py-6 flex justify-between items-center">
-                    <div class="flex items-center gap-4">
-                        <span class="bg-fin-pink text-white w-10 h-10 rounded-full flex items-center justify-center">3</span>
-                        <h2 class="text-xl uppercase tracking-tighter">Protege tus secretos</h2>
-                    </div>
-                    <i class="fa-solid fa-chevron-down text-fin-pink"></i>
-                </button>
-                <div id="s3" class="session-content p-8 bg-slate-50 border-t">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-fin-pink uppercase mb-2">Desarrollo de la Sesión:</h4>
-                            <ul class="space-y-2 text-sm text-gray-600 list-disc pl-5">
-                                <li><strong>Contraseñas:</strong> Deben ser largas, únicas y secretas.</li>
-                                <li><strong>Seguridad:</strong> Usa caracteres especiales (!@#$).</li>
-                                <li><strong>Privacidad:</strong> Tus datos son dinero; no los regales.</li>
-                            </ul>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro" target="_blank" class="bg-fin-pink text-white p-4 rounded-2xl text-center shadow-lg hover:scale-105 transition">
-                                <i class="fa-solid fa-gamepad mr-2"></i> IR A TORRE DEL TESORO
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-[2rem] shadow-lg border border-gray-100 overflow-hidden">
-                <button onclick="toggleSession('s4')" class="w-full px-8 py-6 flex justify-between items-center">
-                    <div class="flex items-center gap-4">
-                        <span class="bg-fin-dark text-white w-10 h-10 rounded-full flex items-center justify-center">4</span>
-                        <h2 class="text-xl uppercase tracking-tighter">Ser amable es genial</h2>
-                    </div>
-                    <i class="fa-solid fa-chevron-down text-fin-dark"></i>
-                </button>
-                <div id="s4" class="session-content p-8 bg-slate-50 border-t">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <h4 class="text-fin-dark uppercase mb-2">Desarrollo de la Sesión:</h4>
-                            <ul class="space-y-2 text-sm text-gray-600 list-disc pl-5">
-                                <li><strong>Empatía:</strong> Hay personas reales detrás de las pantallas.</li>
-                                <li><strong>Ciberacoso:</strong> Aprende a reportar y bloquear.</li>
-                                <li><strong>Positividad:</strong> Usa tus redes para inspirar, no para atacar.</li>
-                            </ul>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable" target="_blank" class="bg-fin-dark text-white p-4 rounded-2xl text-center shadow-lg hover:scale-105 transition">
-                                <i class="fa-solid fa-gamepad mr-2"></i> IR A REINO AMABLE
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-fin-dark text-white rounded-[2.5rem] shadow-2xl overflow-hidden">
-                <button onclick="toggleSession('s5')" class="w-full px-8 py-8 flex justify-between items-center">
-                    <div class="flex items-center gap-4">
-                        <i class="fa-solid fa-trophy text-fin-pink text-3xl"></i>
-                        <h2 class="text-2xl uppercase tracking-tighter">Sesión 5: Misión Cumplida</h2>
-                    </div>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div id="s5" class="session-content p-8 bg-white/5 border-t border-white/10">
-                    <h3 class="text-fin-pink mb-4 uppercase">REGLAS DE COEXISTENCIA FINLINGO:</h3>
-                    <ul class="grid md:grid-cols-3 gap-4 mb-8">
-                        <li class="bg-white/10 p-4 rounded-2xl text-xs italic">1. Respeto absoluto a los compañeros.</li>
-                        <li class="bg-white/10 p-4 rounded-2xl text-xs italic">2. Privacidad de la información compartida.</li>
-                        <li class="bg-white/10 p-4 rounded-2xl text-xs italic">3. Preguntar siempre si tienes dudas.</li>
-                    </ul>
-                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="block w-full brand-gradient text-center py-5 rounded-2xl text-lg shadow-xl uppercase">
-                        Explorar Todo Interland
-                    </a>
-                </div>
-            </div>
-
         </div>
+
+        <div class="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden">
+            <button onclick="toggleSession('s2')" class="w-full px-8 py-8 flex justify-between items-center group">
+                <div class="flex items-center gap-6">
+                    <span class="w-14 h-14 bg-fin-purple text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">2</span>
+                    <h2 class="text-2xl uppercase tracking-tighter text-fin-purple group-hover:translate-x-2 transition-transform">No caigas en trampas</h2>
+                </div>
+                <i class="fa-solid fa-plus text-fin-purple text-xl"></i>
+            </button>
+            <div id="s2" class="session-content p-10 bg-slate-50 border-t">
+                <div class="prose max-w-none space-y-6">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border-l-4 border-fin-purple">
+                        <h4 class="text-fin-purple uppercase mb-2">Desarrollo: Río de Realidad</h4>
+                        <p class="text-sm text-gray-600">En el mundo digital, no todo es lo que parece. El Phishing es una técnica de engaño para robar tus datos. Aprenderemos a verificar fuentes y no caer en "premios" o "mensajes de alerta" falsos.</p>
+                    </div>
+                    <a href="https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad" target="_blank" class="block w-full text-center bg-fin-purple text-white py-4 rounded-2xl uppercase shadow-lg hover:scale-105 transition">Entrar al Río de Realidad</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden">
+            <button onclick="toggleSession('s3')" class="w-full px-8 py-8 flex justify-between items-center group">
+                <div class="flex items-center gap-6">
+                    <span class="w-14 h-14 bg-fin-pink text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">3</span>
+                    <h2 class="text-2xl uppercase tracking-tighter text-fin-pink group-hover:translate-x-2 transition-transform">Protege tus secretos</h2>
+                </div>
+                <i class="fa-solid fa-plus text-fin-pink text-xl"></i>
+            </button>
+            <div id="s3" class="session-content p-10 bg-slate-50 border-t">
+                <div class="prose max-w-none space-y-6">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border-l-4 border-fin-pink">
+                        <h4 class="text-fin-pink uppercase mb-2">Desarrollo: Torre del Tesoro</h4>
+                        <p class="text-sm text-gray-600">Tus datos son tu tesoro. Aprenderás a crear contraseñas robustas (mínimo 8 caracteres, números, símbolos y letras) y a no compartirlas con NADIE.</p>
+                    </div>
+                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro" target="_blank" class="block w-full text-center bg-fin-pink text-white py-4 rounded-2xl uppercase shadow-lg hover:scale-105 transition">Entrar a Torre del Tesoro</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden">
+            <button onclick="toggleSession('s4')" class="w-full px-8 py-8 flex justify-between items-center group">
+                <div class="flex items-center gap-6">
+                    <span class="w-14 h-14 bg-fin-dark text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">4</span>
+                    <h2 class="text-2xl uppercase tracking-tighter text-fin-dark group-hover:translate-x-2 transition-transform">Ser amable es genial</h2>
+                </div>
+                <i class="fa-solid fa-plus text-fin-dark text-xl"></i>
+            </button>
+            <div id="s4" class="session-content p-10 bg-slate-50 border-t">
+                <div class="prose max-w-none space-y-6">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border-l-4 border-fin-dark">
+                        <h4 class="text-fin-dark uppercase mb-2">Desarrollo: Reino Amable</h4>
+                        <p class="text-sm text-gray-600">Internet es una comunidad. Ser amable bloquea el ciberacoso. Si ves algo negativo, ¡repórtalo y no lo compartas! Sé el tipo de ciudadano que hace de la red un lugar mejor.</p>
+                    </div>
+                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable" target="_blank" class="block w-full text-center bg-fin-dark text-white py-4 rounded-2xl uppercase shadow-lg hover:scale-105 transition">Entrar al Reino Amable</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-fin-dark text-white rounded-[3rem] shadow-2xl overflow-hidden p-12 text-center relative">
+            <div class="relative z-10">
+                <h3 class="text-4xl uppercase tracking-tighter mb-4">Sesión 5: Cierre de Ruta</h3>
+                <p class="text-lg italic opacity-80 mb-8 max-w-2xl mx-auto">Gracias por ser parte de esta experiencia educativa única. ¡Has completado la ruta!</p>
+                <div class="inline-flex items-center gap-3 bg-white text-fin-dark px-8 py-4 rounded-full mb-8">
+                    <i class="fa-solid fa-rocket animate-bounce"></i>
+                    <span class="uppercase italic font-black">¡Recuerda que FINLINGO recién está empezando!</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 text-xs uppercase italic opacity-60">
+                    <p>1. Respeto mutuo</p>
+                    <p>2. Privacidad total</p>
+                    <p>3. Preguntar dudas</p>
+                </div>
+            </div>
+            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="mt-8 block w-full bg-fin-blue py-5 rounded-3xl uppercase tracking-widest hover:bg-fin-purple transition shadow-xl">Explorar Interland Completo</a>
+        </div>
+
     </main>
 
-    <footer class="py-12 text-center text-gray-400 text-[10px] uppercase tracking-widest">
-        <p>Transformando el futuro hoy © 2026</p>
-        <p class="mt-2">FINLINGO - Aprende el idioma del dinero</p>
+    <footer class="py-12 border-t border-gray-100 text-center space-y-2">
+        <p class="text-[9px] uppercase tracking-[0.8em] font-bold opacity-30 italic">Transformando el futuro hoy</p>
+        <p class="text-xs uppercase text-fin-blue tracking-widest">"Aprende el idioma del dinero"</p>
     </footer>
 
     <script>
         function toggleSession(id) {
             const content = document.getElementById(id);
+            const btn = content.previousElementSibling;
+            const icon = btn.querySelector('i');
             const isActive = content.classList.contains('active');
             
             // Cerrar otros
             document.querySelectorAll('.session-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.fa-minus').forEach(ic => ic.classList.replace('fa-minus', 'fa-plus'));
             
             // Abrir el seleccionado
             if (!isActive) {
                 content.classList.add('active');
+                icon.classList.replace('fa-plus', 'fa-minus');
             }
         }
     </script>
