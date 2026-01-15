@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINLINGO | Ciudadanía Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fin-blue': '#2D5CFE',
+                        'fin-purple': '#8E44FF',
+                        'fin-pink': '#E040FB',
+                        'fin-dark': '#1A2B6D',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,800;1,800&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #FDFDFF; 
+            color: #1A2B6D; 
+        }
+        
+        /* Aplicar Negrita e Itálica a todo el sitio según instrucción */
+        h1, h2, h3, h4, p, span, a, li, div { 
+            font-style: italic; 
+            font-weight: 800; 
+        }
+
+        .brand-gradient { 
+            background: linear-gradient(135deg, #2D5CFE 0%, #8E44FF 50%, #E040FB 100%); 
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .session-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-2xl tracking-tighter text-fin-blue">FINLINGO</span>
+                <span class="text-[8px] uppercase tracking-[0.3em]">"Aprende el idioma del dinero"</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest">
+                <a href="#inicio" class="hover:text-fin-purple transition">Inicio</a>
+                <a href="#ruta" class="hover:text-fin-purple transition">La Ruta</a>
+                <a href="#reglas" class="hover:text-fin-purple transition">Convivencia</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 bg-slate-50 relative overflow-hidden">
+        <div class="absolute top-20 right-20 w-64 h-64 bg-fin-blue/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-20 w-96 h-96 bg-fin-purple/10 rounded-full blur-3xl"></div>
+        
+        <div class="text-center z-10 px-6">
+            <h1 class="text-6xl md:text-8xl tracking-tighter mb-4">
+                ¡HAGAMOS <span class="text-transparent bg-clip-text brand-gradient">HISTORIA!</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+                Bienvenidos al curso de Ciudadanía Digital. ¡Prepárate para dominar el mundo online!
+            </p>
+            <div class="bg-fin-dark text-white inline-block px-8 py-4 rounded-full shadow-2xl animate-bounce">
+                ¡FINLINGO recién está empezando!
+            </div>
+        </div>
+    </section>
+
+    <section id="ruta" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl tracking-tighter mb-16 text-center uppercase">Tu Ruta de 4 Sesiones</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="session-card glass-card p-10 rounded-[3rem] shadow-xl border-l-8 border-fin-blue">
+                <div class="text-fin-blue text-4xl mb-6"><i class="fa-solid fa-share-nodes"></i></div>
+                <h3 class="text-2xl mb-4 uppercase">1. Comparte con cuidado</h3>
+                <p class="text-sm opacity-80 mb-6 font-medium">Aprende qué compartir y con quién. Mantén tu huella digital limpia y segura desde el primer día.</p>
+                <span class="text-[10px] bg-fin-blue/10 text-fin-blue px-4 py-1 rounded-full italic">FUNDAMENTO BÁSICO</span>
+            </div>
+
+            <div class="session-card glass-card p-10 rounded-[3rem] shadow-xl border-l-8 border-fin-purple">
+                <div class="text-fin-purple text-4xl mb-6"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3 class="text-2xl mb-4 uppercase">2. No caigas en trampas</h3>
+                <p class="text-sm opacity-80 mb-6">Identifica estafas y noticias falsas. Que no te engañen en el mundo digital.</p>
+                <span class="text-[10px] bg-fin-purple/10 text-fin-purple px-4 py-1 rounded-full italic">SEGURIDAD CRÍTICA</span>
+            </div>
+
+            <div class="session-card glass-card p-10 rounded-[3rem] shadow-xl border-l-8 border-fin-pink">
+                <div class="text-fin-pink text-4xl mb-6"><i class="fa-solid fa-key"></i></div>
+                <h3 class="text-2xl mb-4 uppercase">3. Protege tus secretos</h3>
+                <p class="text-sm opacity-80 mb-6">Contraseñas robustas y privacidad. Tus datos son tu tesoro más valioso.</p>
+                <span class="text-[10px] bg-fin-pink/10 text-fin-pink px-4 py-1 rounded-full italic">PRIVACIDAD TOTAL</span>
+            </div>
+
+            <div class="session-card glass-card p-10 rounded-[3rem] shadow-xl border-l-8 border-fin-dark">
+                <div class="text-fin-dark text-4xl mb-6"><i class="fa-solid fa-heart"></i></div>
+                <h3 class="text-2xl mb-4 uppercase">4. Ser amable es genial</h3>
+                <p class="text-sm opacity-80 mb-6">Ciberacoso y empatía. Construye una comunidad positiva y pregunta si tienes dudas.</p>
+                <span class="text-[10px] bg-fin-dark/10 text-fin-dark px-4 py-1 rounded-full italic">CONVIVENCIA DIGITAL</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="reglas" class="py-24 brand-gradient text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl tracking-tighter mb-12 uppercase">Reglas de Coexistencia</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white/10 backdrop-blur-md rounded-2xl">
+                    <i class="fa-solid fa-handshake text-3xl mb-4"></i>
+                    <p>Respeto mutuo en cada interacción.</p>
+                </div>
+                <div class="p-6 bg-white/10 backdrop-blur-md rounded-2xl">
+                    <i class="fa-solid fa-ear-listen text-3xl mb-4"></i>
+                    <p>Escucha activa y participación.</p>
+                </div>
+                <div class="p-6 bg-white/10 backdrop-blur-md rounded-2xl">
+                    <i class="fa-solid fa-lock text-3xl mb-4"></i>
+                    <p>Privacidad de los compañeros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-100 text-center">
+        <div class="mb-6">
+            <h3 class="text-3xl tracking-tighter">FINLINGO</h3>
+            <p class="text-[10px] uppercase tracking-[0.5em] opacity-60">"Aprende el idioma del dinero"</p>
+        </div>
+        <p class="text-[10px] uppercase tracking-widest opacity-40">Transformando el futuro hoy © 2026</p>
+    </footer>
+
+</body>
+</html>
