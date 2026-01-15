@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FINLINGO | Curso de Ciudadanía Digital</title>
+    <title>FINLINGO | Ciudadanía Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -29,8 +29,8 @@
             color: #1A2B6D; 
         }
         
-        /* Aplicación de negrita e itálica obligatoria según manual de marca */
-        h1, h2, h3, h4, p, span, a, button { 
+        /* Aplicación de negrita e itálica obligatoria */
+        h1, h2, h3, h4, p, span, a, button, li { 
             font-style: italic; 
             font-weight: 800; 
         }
@@ -41,147 +41,191 @@
 
         .session-content {
             display: none;
+            max-height: 0;
+            transition: all 0.5s ease-in-out;
         }
 
         .session-content.active {
             display: block;
-            animation: fadeIn 0.5s ease;
+            max-height: 1000px;
+            animation: slideDown 0.4s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex flex-col">
+            <div class="logo-container">
                 <span class="text-3xl tracking-tighter text-fin-blue leading-none">FINLINGO</span>
-                <span class="text-[9px] uppercase tracking-[0.3em] opacity-70">"Aprende el idioma del dinero"</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-fin-dark opacity-80">"Aprende el idioma del dinero"</span>
             </div>
-            <div class="text-right hidden sm:block">
-                <p class="text-[10px] uppercase text-fin-purple">¡FINLINGO recién está empezando!</p>
+            <div class="hidden md:block">
+                <span class="bg-fin-dark text-white text-[10px] px-4 py-2 rounded-full uppercase italic">
+                    ¡FINLINGO recién está empezando!
+                </span>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="brand-gradient py-16 text-white text-center px-6">
-        <h1 class="text-4xl md:text-6xl tracking-tighter mb-4 uppercase">Ciudadanía Digital</h1>
-        <p class="text-xl opacity-90 max-w-2xl mx-auto">Domina el mundo online en 5 sesiones dinámicas y profesionales.</p>
+    <section class="brand-gradient py-20 text-white text-center px-6 relative overflow-hidden">
+        <div class="relative z-10">
+            <h1 class="text-5xl md:text-7xl tracking-tighter mb-6 uppercase leading-none">¡HAGAMOS HISTORIA!</h1>
+            <p class="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto mb-8">
+                Bienvenidos a la ruta de Ciudadanía Digital. Prepárate para dominar el internet.
+            </p>
+            <div class="bg-white/20 backdrop-blur-md inline-block p-4 rounded-3xl border border-white/30">
+                <p class="text-sm uppercase italic">Sesión 0: El Inicio del Viaje</p>
+            </div>
+        </div>
     </section>
 
-    <main class="max-w-5xl mx-auto py-12 px-6">
+    <main class="max-w-4xl mx-auto py-12 px-6">
         
         <div class="space-y-6">
             
-            <div class="bg-white rounded-[2rem] shadow-lg border border-gray-100 overflow-hidden">
-                <button onclick="toggleSession('s1')" class="w-full px-8 py-6 flex justify-between items-center hover:bg-slate-50 transition">
-                    <div class="flex items-center gap-4">
-                        <span class="bg-fin-blue text-white w-10 h-10 rounded-full flex items-center justify-center">1</span>
-                        <h2 class="text-xl uppercase tracking-tighter text-fin-blue">Comparte con cuidado</h2>
+            <div class="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden">
+                <button onclick="toggleSession('s1')" class="w-full px-8 py-7 flex justify-between items-center hover:bg-slate-50 transition text-left">
+                    <div class="flex items-center gap-5">
+                        <span class="bg-fin-blue text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-fin-blue/30">1</span>
+                        <div>
+                            <h2 class="text-xl uppercase tracking-tighter text-fin-blue">Comparte con cuidado</h2>
+                            <p class="text-[10px] text-gray-400 uppercase">Montaña Sensata</p>
+                        </div>
                     </div>
-                    <i class="fa-solid fa-chevron-down text-fin-blue"></i>
+                    <i class="fa-solid fa-circle-plus text-fin-blue text-2xl"></i>
                 </button>
-                <div id="s1" class="session-content px-8 pb-8 border-t border-gray-50">
-                    <p class="py-4 text-gray-600 italic">Aprenderemos a proteger nuestra huella digital y decidir qué información es segura compartir.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                        <a href="#" class="flex items-center justify-center gap-3 bg-fin-dark text-white p-4 rounded-2xl hover:scale-105 transition shadow-lg">
-                            <i class="fa-solid fa-display"></i> VER PRESENTACIÓN
-                        </a>
-                        <a href="#" class="flex items-center justify-center gap-3 border-2 border-fin-blue text-fin-blue p-4 rounded-2xl hover:bg-fin-blue hover:text-white transition">
-                            <i class="fa-solid fa-gamepad"></i> LINK DE ACTIVIDAD
-                        </a>
+                <div id="s1" class="session-content px-8 pb-8 border-t border-gray-50 bg-slate-50/50">
+                    <div class="py-6 space-y-4">
+                        <h4 class="text-fin-dark uppercase text-sm">Objetivo de la sesión:</h4>
+                        <p class="text-gray-600 text-sm italic">Aprenderás a proteger tu huella digital, entendiendo qué información es segura compartir y con quién, evitando problemas futuros.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <a href="#" class="flex items-center justify-center gap-3 bg-fin-dark text-white p-4 rounded-2xl hover:bg-black transition">
+                                <i class="fa-solid fa-file-powerpoint"></i> PRESENTACIÓN
+                            </a>
+                            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata" target="_blank" class="flex items-center justify-center gap-3 bg-fin-blue text-white p-4 rounded-2xl hover:scale-105 transition shadow-lg">
+                                <i class="fa-solid fa-gamepad"></i> JUGAR INTERLAND
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-[2rem] shadow-lg border border-gray-100 overflow-hidden">
-                <button onclick="toggleSession('s2')" class="w-full px-8 py-6 flex justify-between items-center hover:bg-slate-50 transition">
-                    <div class="flex items-center gap-4">
-                        <span class="bg-fin-purple text-white w-10 h-10 rounded-full flex items-center justify-center">2</span>
-                        <h2 class="text-xl uppercase tracking-tighter text-fin-purple">No caigas en trampas</h2>
+            <div class="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden">
+                <button onclick="toggleSession('s2')" class="w-full px-8 py-7 flex justify-between items-center hover:bg-slate-50 transition text-left">
+                    <div class="flex items-center gap-5">
+                        <span class="bg-fin-purple text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-fin-purple/30">2</span>
+                        <div>
+                            <h2 class="text-xl uppercase tracking-tighter text-fin-purple">No caigas en trampas</h2>
+                            <p class="text-[10px] text-gray-400 uppercase">Río de Realidad</p>
+                        </div>
                     </div>
-                    <i class="fa-solid fa-chevron-down text-fin-purple"></i>
+                    <i class="fa-solid fa-circle-plus text-fin-purple text-2xl"></i>
                 </button>
-                <div id="s2" class="session-content px-8 pb-8 border-t border-gray-50">
-                    <p class="py-4 text-gray-600 italic">Identificación de phishing, estafas y noticias falsas en la red.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                        <a href="#" class="flex items-center justify-center gap-3 bg-fin-dark text-white p-4 rounded-2xl hover:scale-105 transition shadow-lg">
-                            <i class="fa-solid fa-display"></i> VER PRESENTACIÓN
-                        </a>
-                        <a href="#" class="flex items-center justify-center gap-3 border-2 border-fin-purple text-fin-purple p-4 rounded-2xl hover:bg-fin-purple hover:text-white transition">
-                            <i class="fa-solid fa-gamepad"></i> LINK DE ACTIVIDAD
-                        </a>
+                <div id="s2" class="session-content px-8 pb-8 border-t border-gray-50 bg-slate-50/50">
+                    <div class="py-6 space-y-4">
+                        <h4 class="text-fin-dark uppercase text-sm">Objetivo de la sesión:</h4>
+                        <p class="text-gray-600 text-sm italic">Desarrollarás un "sexto sentido" digital para identificar correos falsos, phishing y noticias que no son reales.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <a href="#" class="flex items-center justify-center gap-3 bg-fin-dark text-white p-4 rounded-2xl">
+                                <i class="fa-solid fa-file-powerpoint"></i> PRESENTACIÓN
+                            </a>
+                            <a href="https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad" target="_blank" class="flex items-center justify-center gap-3 bg-fin-purple text-white p-4 rounded-2xl hover:scale-105 transition shadow-lg">
+                                <i class="fa-solid fa-gamepad"></i> JUGAR INTERLAND
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-[2rem] shadow-lg border border-gray-100 overflow-hidden">
-                <button onclick="toggleSession('s3')" class="w-full px-8 py-6 flex justify-between items-center hover:bg-slate-50 transition">
-                    <div class="flex items-center gap-4">
-                        <span class="bg-fin-pink text-white w-10 h-10 rounded-full flex items-center justify-center">3</span>
-                        <h2 class="text-xl uppercase tracking-tighter text-fin-pink">Protege tus secretos</h2>
+            <div class="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden">
+                <button onclick="toggleSession('s3')" class="w-full px-8 py-7 flex justify-between items-center hover:bg-slate-50 transition text-left">
+                    <div class="flex items-center gap-5">
+                        <span class="bg-fin-pink text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-fin-pink/30">3</span>
+                        <div>
+                            <h2 class="text-xl uppercase tracking-tighter text-fin-pink">Protege tus secretos</h2>
+                            <p class="text-[10px] text-gray-400 uppercase">Torre del Tesoro</p>
+                        </div>
                     </div>
-                    <i class="fa-solid fa-chevron-down text-fin-pink"></i>
+                    <i class="fa-solid fa-circle-plus text-fin-pink text-2xl"></i>
                 </button>
-                <div id="s3" class="session-content px-8 pb-8 border-t border-gray-50">
-                    <p class="py-4 text-gray-600 italic">Creación de contraseñas robustas y gestión de la privacidad personal.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                        <a href="#" class="flex items-center justify-center gap-3 bg-fin-dark text-white p-4 rounded-2xl hover:scale-105 transition shadow-lg">
-                            <i class="fa-solid fa-display"></i> VER PRESENTACIÓN
-                        </a>
-                        <a href="#" class="flex items-center justify-center gap-3 border-2 border-fin-pink text-fin-pink p-4 rounded-2xl hover:bg-fin-pink hover:text-white transition">
-                            <i class="fa-solid fa-gamepad"></i> LINK DE ACTIVIDAD
-                        </a>
+                <div id="s3" class="session-content px-8 pb-8 border-t border-gray-50 bg-slate-50/50">
+                    <div class="py-6 space-y-4">
+                        <h4 class="text-fin-dark uppercase text-sm">Objetivo de la sesión:</h4>
+                        <p class="text-gray-600 text-sm italic">Aprenderás a crear contraseñas blindadas y a gestionar tu privacidad para que tus datos personales estén siempre seguros.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <a href="#" class="flex items-center justify-center gap-3 bg-fin-dark text-white p-4 rounded-2xl">
+                                <i class="fa-solid fa-file-powerpoint"></i> PRESENTACIÓN
+                            </a>
+                            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro" target="_blank" class="flex items-center justify-center gap-3 bg-fin-pink text-white p-4 rounded-2xl hover:scale-105 transition shadow-lg">
+                                <i class="fa-solid fa-gamepad"></i> JUGAR INTERLAND
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-[2rem] shadow-lg border border-gray-100 overflow-hidden">
-                <button onclick="toggleSession('s4')" class="w-full px-8 py-6 flex justify-between items-center hover:bg-slate-50 transition">
-                    <div class="flex items-center gap-4">
-                        <span class="bg-fin-dark text-white w-10 h-10 rounded-full flex items-center justify-center">4</span>
-                        <h2 class="text-xl uppercase tracking-tighter text-fin-dark">Ser amable es genial</h2>
+            <div class="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden">
+                <button onclick="toggleSession('s4')" class="w-full px-8 py-7 flex justify-between items-center hover:bg-slate-50 transition text-left">
+                    <div class="flex items-center gap-5">
+                        <span class="bg-fin-dark text-white w-12 h-12 rounded-2xl flex items-center justify-center text-xl shadow-lg shadow-fin-dark/30">4</span>
+                        <div>
+                            <h2 class="text-xl uppercase tracking-tighter text-fin-dark">Ser amable es genial</h2>
+                            <p class="text-[10px] text-gray-400 uppercase">Reino Amable</p>
+                        </div>
                     </div>
-                    <i class="fa-solid fa-chevron-down text-fin-dark"></i>
+                    <i class="fa-solid fa-circle-plus text-fin-dark text-2xl"></i>
                 </button>
-                <div id="s4" class="session-content px-8 pb-8 border-t border-gray-50">
-                    <p class="py-4 text-gray-600 italic">Netiqueta, prevención del ciberacoso y empatía digital.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                        <a href="#" class="flex items-center justify-center gap-3 bg-fin-dark text-white p-4 rounded-2xl hover:scale-105 transition shadow-lg">
-                            <i class="fa-solid fa-display"></i> VER PRESENTACIÓN
-                        </a>
-                        <a href="#" class="flex items-center justify-center gap-3 border-2 border-fin-dark text-fin-dark p-4 rounded-2xl hover:bg-fin-dark hover:text-white transition">
-                            <i class="fa-solid fa-gamepad"></i> LINK DE ACTIVIDAD
-                        </a>
+                <div id="s4" class="session-content px-8 pb-8 border-t border-gray-50 bg-slate-50/50">
+                    <div class="py-6 space-y-4">
+                        <h4 class="text-fin-dark uppercase text-sm">Objetivo de la sesión:</h4>
+                        <p class="text-gray-600 text-sm italic">Descubriremos el poder de la empatía digital y cómo bloquear el ciberacoso para construir un internet positivo.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <a href="#" class="flex items-center justify-center gap-3 bg-fin-dark text-white p-4 rounded-2xl">
+                                <i class="fa-solid fa-file-powerpoint"></i> PRESENTACIÓN
+                            </a>
+                            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable" target="_blank" class="flex items-center justify-center gap-3 bg-fin-dark text-white p-4 rounded-2xl hover:scale-105 transition shadow-lg">
+                                <i class="fa-solid fa-gamepad"></i> JUGAR INTERLAND
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-slate-100 rounded-[2rem] shadow-lg border-2 border-dashed border-fin-blue overflow-hidden">
-                <button onclick="toggleSession('s5')" class="w-full px-8 py-6 flex justify-between items-center hover:bg-white transition">
-                    <div class="flex items-center gap-4">
-                        <span class="brand-gradient text-white w-10 h-10 rounded-full flex items-center justify-center"><i class="fa-solid fa-rocket"></i></span>
-                        <h2 class="text-xl uppercase tracking-tighter text-fin-dark">Cierre de Ruta</h2>
+            <div class="bg-fin-dark text-white rounded-[2.5rem] shadow-2xl overflow-hidden">
+                <button onclick="toggleSession('s5')" class="w-full px-8 py-7 flex justify-between items-center hover:bg-white/5 transition text-left border-b border-white/10">
+                    <div class="flex items-center gap-5">
+                        <span class="bg-white text-fin-dark w-12 h-12 rounded-2xl flex items-center justify-center text-xl">5</span>
+                        <div>
+                            <h2 class="text-xl uppercase tracking-tighter">Cierre de Ruta</h2>
+                            <p class="text-[10px] text-white/50 uppercase italic">Misión Cumplida</p>
+                        </div>
                     </div>
-                    <i class="fa-solid fa-chevron-down text-fin-dark"></i>
+                    <i class="fa-solid fa-rocket text-2xl animate-pulse"></i>
                 </button>
-                <div id="s5" class="session-content px-8 pb-8 border-t border-gray-100">
-                    <p class="py-4 text-gray-600 italic">Consolidación de aprendizajes y entrega de reconocimientos.</p>
-                    <div class="bg-white p-6 rounded-2xl shadow-sm mb-4">
-                        <h4 class="text-fin-blue mb-2">REGLAS DE COEXISTENCIA</h4>
-                        <ul class="text-xs space-y-1 list-disc list-inside">
-                            <li>Respeto mutuo</li>
-                            <li>Privacidad compartida</li>
-                            <li>Preguntar siempre ante la duda</li>
-                        </ul>
-                    </div>
-                    <div class="grid grid-cols-1 gap-4 mt-4">
-                        <a href="#" class="flex items-center justify-center gap-3 bg-fin-blue text-white p-4 rounded-2xl hover:scale-105 transition shadow-lg">
-                            <i class="fa-solid fa-trophy"></i> MATERIAL DE GRADUACIÓN
+                <div id="s5" class="session-content px-8 pb-8 bg-white/5">
+                    <div class="py-6 space-y-6">
+                        <div class="bg-white/10 p-6 rounded-3xl">
+                            <h4 class="text-fin-pink uppercase text-sm mb-4 italic">Reglas de Coexistencia:</h4>
+                            <ul class="text-xs space-y-3 list-none">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-fin-blue"></i> Respeto mutuo en todas las sesiones.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-fin-blue"></i> Escucha activa y profesional.</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-fin-blue"></i> Si tienes dudas, pregunta.</li>
+                            </ul>
+                        </div>
+                        <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="w-full flex items-center justify-center gap-3 brand-gradient text-white p-5 rounded-2xl hover:scale-105 transition shadow-2xl uppercase tracking-widest text-sm">
+                            ¡Explorar todo Interland!
                         </a>
                     </div>
                 </div>
@@ -190,22 +234,37 @@
         </div>
     </main>
 
-    <footer class="py-12 text-center">
-        <p class="text-[10px] uppercase tracking-[0.5em] opacity-40">Transformando el futuro hoy</p>
-        <p class="text-xs mt-2 uppercase">"Aprende el idioma del dinero"</p>
+    <footer class="py-16 text-center border-t border-gray-100">
+        <div class="mb-6">
+            <h3 class="text-4xl tracking-tighter text-fin-blue leading-none">FINLINGO</h3>
+            <p class="text-[10px] uppercase tracking-[0.5em] text-fin-dark opacity-50 italic">"Aprende el idioma del dinero"</p>
+        </div>
+        <p class="text-[8px] uppercase tracking-[0.2em] opacity-30 mt-8 italic">Transformando el futuro hoy © 2026</p>
     </footer>
 
     <script>
         function toggleSession(id) {
             const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            const icon = button.querySelector('i');
             const isActive = content.classList.contains('active');
             
-            // Cerrar otros
-            document.querySelectorAll('.session-content').forEach(el => el.classList.remove('active'));
+            // Cerrar otros contenidos
+            document.querySelectorAll('.session-content').forEach(el => {
+                el.classList.remove('active');
+            });
             
-            // Abrir el seleccionado
+            // Resetear todos los íconos
+            document.querySelectorAll('.fa-circle-minus').forEach(ic => {
+                ic.classList.replace('fa-circle-minus', 'fa-circle-plus');
+            });
+
+            // Abrir el actual si no estaba activo
             if (!isActive) {
                 content.classList.add('active');
+                if(icon.classList.contains('fa-circle-plus')) {
+                    icon.classList.replace('fa-circle-plus', 'fa-circle-minus');
+                }
             }
         }
     </script>
