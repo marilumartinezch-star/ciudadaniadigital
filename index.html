@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FINLINGO | Academia Digital</title>
+    <title>FINLINGO | Ciudadanía Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -27,158 +27,148 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; color: #1E22A5; }
         h1, h2, h3, h4, span, p, button, div { font-style: italic; font-weight: 800; }
         .text-gradient { background: linear-gradient(135deg, #2D5CFE 0%, #D63AF2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
         .slide { display: none; min-height: calc(100vh - 160px); animation: fadeIn 0.4s ease; }
         .slide.active { display: flex; flex-direction: column; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
         .nav-btn { color: #2D5CFE; border: 2px solid #2D5CFE; transition: 0.3s; }
         .nav-btn.active { background: #1E22A5; color: white; border-color: #1E22A5; }
-        .age-tag { padding: 4px 12px; border-radius: 8px; font-size: 10px; text-transform: uppercase; margin-right: 8px; }
-        .tag-kids { background: #E0E7FF; color: #2D5CFE; }
-        .tag-teens { background: #FAE8FF; color: #D63AF2; }
+
+        .age-badge { padding: 4px 12px; border-radius: 99px; font-size: 10px; text-transform: uppercase; margin-bottom: 8px; display: inline-block; }
+        .kids-bg { background: #DBEAFE; color: #1E40AF; }
+        .teens-bg { background: #F3E8FF; color: #7E22CE; }
+        
+        .concept-box { background: #F8FAFF; border-radius: 2.5rem; padding: 2.5rem; border: 1px solid #E2E8F0; }
+        .activity-card { background: #FFFFFF; border-radius: 2rem; padding: 2rem; border: 2px dashed #CBD5E1; }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="h-[100px] px-10 flex justify-between items-center bg-white sticky top-0 z-50 border-b border-slate-50">
-        <div class="flex items-center gap-4">
-            <div class="w-[50px] h-[50px] rounded-full p-1 bg-fin-gradient flex items-center justify-center">
+    <nav class="h-[120px] px-12 flex justify-between items-center bg-white sticky top-0 z-50">
+        <div class="flex items-center gap-5">
+            <div class="w-[60px] h-[60px] rounded-full p-1 bg-fin-gradient flex items-center justify-center">
                 <div class="bg-white w-full h-full rounded-full flex items-center justify-center">
-                    <i class="fa-solid fa-shield-halved text-gradient text-xl"></i>
+                    <i class="fa-solid fa-comments-dollar text-gradient text-2xl"></i>
                 </div>
             </div>
             <div>
-                <h2 class="text-fin-midnight text-3xl tracking-tighter uppercase leading-none">FINLINGO</h2>
-                <p class="text-gradient text-[8px] tracking-[0.3em] uppercase mt-1 leading-none italic">CIUDADANÍA DIGITAL PROFESIONAL</p>
+                <h2 class="text-fin-midnight text-4xl tracking-tighter uppercase leading-none italic">FINLINGO</h2>
+                <p class="text-gradient text-[10px] tracking-[0.4em] uppercase italic leading-none mt-1">APRENDE EL IDIOMA DEL DINERO</p>
             </div>
         </div>
-        <div class="flex gap-2">
-            <button onclick="showSlide(0)" id="btn-0" class="nav-btn active px-5 py-2 rounded-full text-[10px] uppercase">Sesión 0</button>
-            <button onclick="showSlide(1)" id="btn-1" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center">1</button>
-            <button onclick="showSlide(2)" id="btn-2" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center">2</button>
-            <button onclick="showSlide(3)" id="btn-3" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center">3</button>
-            <button onclick="showSlide(4)" id="btn-4" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center">4</button>
+        <div class="flex items-center gap-2">
+            <button onclick="showSlide(0)" id="btn-0" class="nav-btn active px-6 py-3 rounded-full text-[10px] uppercase italic">Sesión 0</button>
+            <button onclick="showSlide(1)" id="btn-1" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">1</button>
+            <button onclick="showSlide(2)" id="btn-2" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">2</button>
+            <button onclick="showSlide(3)" id="btn-3" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">3</button>
+            <button onclick="showSlide(4)" id="btn-4" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">4</button>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto p-8">
+    <main class="max-w-7xl mx-auto p-10">
 
         <section id="slide-0" class="slide active">
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="flex flex-col justify-center">
-                    <h1 class="text-6xl uppercase tracking-tighter leading-none mb-6 text-fin-midnight">RUTA DE <br><span class="text-gradient">4 SESIONES</span></h1>
-                    <p class="text-xl mb-6 italic opacity-80">Un programa integral para dos niveles: Exploradores (8-10) y Líderes (11-17).</p>
-                    <div class="flex gap-4">
-                        <span class="age-tag tag-kids">8-10 Años</span>
-                        <span class="age-tag tag-teens">11-17 Años</span>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-7xl uppercase tracking-tighter italic leading-[0.85] mb-8 text-fin-midnight">CIUDADANÍA <br><span class="text-gradient">DIGITAL</span></h1>
+                    <p class="text-2xl text-fin-midnight/70 italic mb-8">FINLINGO presenta una ruta de 4 sesiones diseñada para formar ciudadanos digitales seguros y líderes financieros del futuro.</p>
+                    <div class="flex gap-4 mb-6">
+                        <span class="age-badge kids-bg">8 - 10 años</span>
+                        <span class="age-badge teens-bg">11 - 17 años</span>
                     </div>
                 </div>
-                <div class="bg-fin-midnight rounded-[3rem] p-10 text-white">
-                    <h3 class="text-2xl uppercase mb-6 border-b border-white/10 pb-4 italic">Reglas de Oro</h3>
-                    <ul class="space-y-4 text-lg italic">
-                        <li><i class="fa-solid fa-star text-fin-pink mr-3"></i> Respeto: Valoramos todas las voces.</li>
-                        <li><i class="fa-solid fa-lock text-fin-blue mr-3"></i> Confianza: Espacio seguro y privado.</li>
-                        <li><i class="fa-solid fa-rocket text-fin-pink mr-3"></i> Crecimiento: ¡Recién empezamos!</li>
+                <div class="bg-fin-midnight rounded-[4rem] p-12 text-white shadow-2xl">
+                    <h3 class="text-3xl uppercase italic mb-8 border-b border-white/10 pb-4">Coexistencia</h3>
+                    <ul class="space-y-6 text-xl italic">
+                        <li class="flex items-center gap-5"><i class="fa-solid fa-user-shield text-fin-pink"></i> Respeto: Tu voz importa aquí.</li>
+                        <li class="flex items-center gap-5"><i class="fa-solid fa-lock text-fin-blue"></i> Privacidad: Cuidamos la información.</li>
+                        <li class="flex items-center gap-5"><i class="fa-solid fa-rocket text-fin-pink"></i> Futuro: ¡Recién estamos empezando!</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="slide-1" class="slide">
-            <h2 class="text-4xl uppercase mb-8 text-fin-midnight">01. Sé <span class="text-fin-blue">Inteligente</span> (Compartir con cuidado)</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-50 p-8 rounded-[2rem] border-l-8 border-fin-blue">
-                    <h4 class="text-fin-midnight mb-4 uppercase">Conceptos Clave (Guía pág. 7-15)</h4>
-                    <ul class="space-y-3 text-sm italic opacity-80">
-                        <li><strong>Huella Digital:</strong> El rastro que dejas al navegar.</li>
-                        <li><strong>Privacidad:</strong> Qué información NO compartir (dirección, claves).</li>
-                        <li><strong>Consecuencias:</strong> Cómo una foto hoy afecta tu perfil financiero mañana.</li>
-                    </ul>
+            <h2 class="text-5xl uppercase italic mb-10 text-fin-midnight">01. Sé <span class="text-fin-blue">Inteligente</span> (Compartir con cuidado)</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="concept-box col-span-1">
+                    <h4 class="text-fin-blue mb-4 uppercase italic">La Huella Digital</h4>
+                    <p class="text-sm italic opacity-80 leading-relaxed">Según la guía (pág. 7), todo rastro en línea es permanente. Tu "reputación digital" es tu activo financiero más valioso.</p>
                 </div>
-                <div class="space-y-4">
-                    <div class="p-6 bg-white border-2 border-dashed border-fin-blue rounded-3xl">
-                        <span class="age-tag tag-kids">Dinámica 8-10</span>
-                        <p class="text-sm italic mt-2"><strong>"Círculo de Confianza":</strong> ¿A quién le contarías un secreto? Clasificamos información en: Público, Amigos o Privado.</p>
+                <div class="col-span-2 space-y-6">
+                    <div class="activity-card border-fin-blue">
+                        <span class="age-badge kids-bg">Actividad 8-10</span>
+                        <p class="italic text-fin-midnight"><strong>¿Secreto o Noticia?:</strong> Clasificamos información. ¿Tu dirección es algo que le dirías a todo el mundo o solo a tu familia?</p>
                     </div>
-                    <div class="p-6 bg-white border-2 border-dashed border-fin-pink rounded-3xl">
-                        <span class="age-tag tag-teens">Dinámica 11-17</span>
-                        <p class="text-sm italic mt-2"><strong>"El Reclutador Digital":</strong> Analizamos perfiles sociales ficticios. ¿A quién contratarías basado en su historial?</p>
+                    <div class="activity-card border-fin-pink">
+                        <span class="age-badge teens-bg">Actividad 11-17</span>
+                        <p class="italic text-fin-midnight"><strong>El Reclutador:</strong> Analizamos cómo una publicación impulsiva hoy puede afectar una beca o un empleo en el futuro.</p>
                     </div>
-                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata" target="_blank" class="block text-center bg-fin-blue text-white py-4 rounded-full uppercase text-[10px]">Práctica: Montaña Sensata</a>
+                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata" target="_blank" class="block bg-fin-blue text-white py-5 rounded-full text-center uppercase italic text-[10px] shadow-xl">Practicar en Montaña Sensata</a>
                 </div>
             </div>
         </section>
 
         <section id="slide-2" class="slide">
-            <h2 class="text-4xl uppercase mb-8 text-fin-midnight">02. Sé <span class="text-fin-pink">Alerta</span> (No caigas en trampas)</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-50 p-8 rounded-[2rem] border-l-8 border-fin-pink">
-                    <h4 class="text-fin-midnight mb-4 uppercase">Conceptos Clave (Guía pág. 35-43)</h4>
-                    <ul class="space-y-3 text-sm italic opacity-80">
-                        <li><strong>Phishing:</strong> Mensajes que fingen ser oficiales (bancos, juegos).</li>
-                        <li><strong>Señales de Alerta:</strong> Errores ortográficos, sentido de urgencia.</li>
-                        <li><strong>Verificación:</strong> Siempre confirma la fuente antes de hacer clic.</li>
-                    </ul>
+            <h2 class="text-5xl uppercase italic mb-10 text-fin-midnight">02. Sé <span class="text-fin-pink">Alerta</span> (No caigas en trampas)</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="concept-box col-span-1 border-fin-pink">
+                    <h4 class="text-fin-pink mb-4 uppercase italic">Phishing</h4>
+                    <p class="text-sm italic opacity-80 leading-relaxed">Identifica mensajes que fingen ser oficiales (Guía pág. 35). Los estafadores buscan tus claves para acceder a tus ahorros.</p>
                 </div>
-                <div class="space-y-4">
-                    <div class="p-6 bg-white border-2 border-dashed border-fin-blue rounded-3xl">
-                        <span class="age-tag tag-kids">Dinámica 8-10</span>
-                        <p class="text-sm italic mt-2"><strong>"¿Real o Truco?":</strong> Vemos mensajes de "ganaste gemas gratis". Identificamos el truco visual.</p>
+                <div class="col-span-2 space-y-6">
+                    <div class="activity-card border-fin-blue">
+                        <span class="age-badge kids-bg">Actividad 8-10</span>
+                        <p class="italic text-fin-midnight"><strong>El Inspector de Links:</strong> ¿Ese regalo de "diamantes gratis" tiene un candado verde en el URL? ¡Aprendamos a dudar!</p>
                     </div>
-                    <div class="p-6 bg-white border-2 border-dashed border-fin-pink rounded-3xl">
-                        <span class="age-tag tag-teens">Dinámica 11-17</span>
-                        <p class="text-sm italic mt-2"><strong>"Ingeniería Social":</strong> Analizamos cómo un mensaje de SMS puede intentar robar el acceso a tu cuenta bancaria.</p>
+                    <div class="activity-card border-fin-pink">
+                        <span class="age-badge teens-bg">Actividad 11-17</span>
+                        <p class="italic text-fin-midnight"><strong>Ingeniería Social:</strong> Analizamos correos falsos de bancos. Buscamos errores ortográficos y remitentes extraños.</p>
                     </div>
-                    <a href="https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad" target="_blank" class="block text-center bg-fin-gradient text-white py-4 rounded-full uppercase text-[10px]">Práctica: Río de Realidad</a>
+                    <a href="https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad" target="_blank" class="block bg-fin-gradient text-white py-5 rounded-full text-center uppercase italic text-[10px] shadow-xl">Navegar el Río de Realidad</a>
                 </div>
             </div>
         </section>
 
         <section id="slide-3" class="slide">
-            <h2 class="text-4xl uppercase mb-8 text-fin-midnight">03. Sé <span class="text-fin-blue">Seguro</span> (Protege tus secretos)</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-50 p-8 rounded-[2rem] border-l-8 border-fin-midnight">
-                    <h4 class="text-fin-midnight mb-4 uppercase">Conceptos Clave (Guía pág. 53-59)</h4>
-                    <ul class="space-y-3 text-sm italic opacity-80">
-                        <li><strong>Claves Robustas:</strong> Combinación de símbolos, números y letras.</li>
-                        <li><strong>Multifactor (2FA):</strong> Una segunda capa de seguridad (ej: código al celular).</li>
-                        <li><strong>Gestión:</strong> No usar la misma clave para todo.</li>
-                    </ul>
+            <h2 class="text-5xl uppercase italic mb-10 text-fin-midnight">03. Sé <span class="text-fin-blue">Seguro</span> (Protege tus secretos)</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="concept-box col-span-1 border-fin-midnight">
+                    <h4 class="text-fin-midnight mb-4 uppercase italic">Bóveda de Claves</h4>
+                    <p class="text-sm italic opacity-80 leading-relaxed">Dominamos el arte de las contraseñas robustas y el Doble Factor de Autenticación (Guía pág. 53).</p>
                 </div>
-                <div class="space-y-4">
-                    <div class="p-6 bg-white border-2 border-dashed border-fin-blue rounded-3xl">
-                        <span class="age-tag tag-kids">Dinámica 8-10</span>
-                        <p class="text-sm italic mt-2"><strong>"La Caja Fuerte":</strong> Creamos contraseñas basadas en frases de cuentos y las transformamos en códigos.</p>
+                <div class="col-span-2 space-y-6">
+                    <div class="activity-card border-fin-blue">
+                        <span class="age-badge kids-bg">Actividad 8-10</span>
+                        <p class="italic text-fin-midnight"><strong>Contraseña-Frase:</strong> Convertimos una frase de juego en una clave imposible de adivinar usando símbolos y números.</p>
                     </div>
-                    <div class="p-6 bg-white border-2 border-dashed border-fin-pink rounded-3xl">
-                        <span class="age-tag tag-teens">Dinámica 11-17</span>
-                        <p class="text-sm italic mt-2"><strong>"Hackers vs Seguros":</strong> Evaluamos cuánto tiempo tardaría una computadora en adivinar diferentes claves.</p>
+                    <div class="activity-card border-fin-pink">
+                        <span class="age-badge teens-bg">Actividad 11-17</span>
+                        <p class="italic text-fin-midnight"><strong>Seguridad 2FA:</strong> Simulamos cómo un hacker falla si tienes activado el código de verificación en tu celular.</p>
                     </div>
-                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro" target="_blank" class="block text-center bg-fin-midnight text-white py-4 rounded-full uppercase text-[10px]">Práctica: Torre del Tesoro</a>
+                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro" target="_blank" class="block bg-fin-midnight text-white py-5 rounded-full text-center uppercase italic text-[10px] shadow-xl">Blindar la Torre del Tesoro</a>
                 </div>
             </div>
         </section>
 
         <section id="slide-4" class="slide">
-            <h2 class="text-4xl uppercase mb-8 text-fin-midnight">04. Sé <span class="text-gradient">Amable</span> (Netiqueta)</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-50 p-8 rounded-[2rem] border-l-8 border-fin-blue">
-                    <h4 class="text-fin-midnight mb-4 uppercase">Conceptos Clave (Guía pág. 67-75)</h4>
-                    <ul class="space-y-3 text-sm italic opacity-80">
-                        <li><strong>Empatía Digital:</strong> Pensar antes de comentar.</li>
-                        <li><strong>Bloquear y Reportar:</strong> Herramientas ante el ciberacoso.</li>
-                        <li><strong>Liderazgo:</strong> Ser quien apoya, no quien destruye.</li>
-                    </ul>
+            <h2 class="text-5xl uppercase italic mb-10 text-fin-midnight">04. Sé <span class="text-gradient">Amable</span> (Ser amable es genial)</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="concept-box col-span-1 border-fin-blue">
+                    <h4 class="text-fin-blue mb-4 uppercase italic">Netiqueta</h4>
+                    <p class="text-sm italic opacity-80 leading-relaxed">El respeto es la base de la comunidad (Guía pág. 67). Un líder de FINLINGO es aquel que frena el ciberacoso.</p>
                 </div>
-                <div class="space-y-4">
-                    <div class="p-6 bg-white border-2 border-dashed border-fin-blue rounded-3xl">
-                        <span class="age-tag tag-kids">Dinámica 8-10</span>
-                        <p class="text-sm italic mt-2"><strong>"El Semáforo":</strong> Mensajes en Verde (amables), Amarillo (dudosos) y Rojo (crueles). ¿Cómo reaccionamos?</p>
+                <div class="col-span-2 space-y-6">
+                    <div class="activity-card border-fin-blue">
+                        <span class="age-badge kids-bg">Actividad 8-10</span>
+                        <p class="italic text-fin-midnight"><strong>El Semáforo:</strong> Si ves un comentario feo, ¿te unes (Rojo), ignoras (Amarillo) o reportas y apoyas (Verde)?</p>
                     </div>
-                    <div class="p-6 bg-white border-2 border-dashed border-fin-pink rounded-3xl">
-                        <span class="age-tag tag-teens">Dinámica 11-17</span>
-                        <p class="text-sm italic mt-2"><strong>"Debate de Casos":</strong> Analizamos situaciones de la pág. 75. ¿Denunciarías una cuenta falsa de un amigo?</p>
+                    <div class="activity-card border-fin-pink">
+                        <span class="age-badge teens-bg">Actividad 11-17</span>
+                        <p class="italic text-fin-midnight"><strong>Análisis de Casos:</strong> Debatimos las situaciones de la pág. 75 de la guía sobre reportar cuentas falsas y memes crueles.</p>
                     </div>
-                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable" target="_blank" class="block text-center bg-fin-pink text-white py-4 rounded-full uppercase text-[10px]">Práctica: Reino Amable</a>
+                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable" target="_blank" class="block bg-fin-pink text-white py-5 rounded-full text-center uppercase italic text-[10px] shadow-xl">Esparcir Bondad en el Reino</a>
                 </div>
             </div>
         </section>
