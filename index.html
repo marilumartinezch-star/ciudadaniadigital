@@ -11,10 +11,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'fin-blue': '#3B82F6', // Azul del logo
-                        'fin-purple': '#8B5CF6', // Púrpura intermedio
-                        'fin-pink': '#D946EF', // Fucsia del logo
-                        'fin-dark': '#1E293B',
+                        'fin-blue': '#3B82F6',
+                        'fin-purple': '#8B5CF6',
+                        'fin-pink': '#D946EF',
+                        'fin-dark': '#0F172A',
                     },
                     backgroundImage: {
                         'fin-gradient': 'linear-gradient(135deg, #3B82F6 0%, #D946EF 100%)',
@@ -25,152 +25,109 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,800;1,800&display=swap');
-        
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FDFDFF; color: #1E293B; }
-        h1, h2, h3, h4, span, p, button, li, div { font-style: italic; font-weight: 800; }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #3B82F6 0%, #D946EF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Recreación del Isotipo del Logo */
-        .fin-logo-circle {
-            width: 55px; height: 55px;
-            border-radius: 50%;
-            padding: 3px;
-            background: linear-gradient(135deg, #3B82F6, #D946EF);
-            display: flex; align-items: center; justify-content: center;
-        }
-        .fin-logo-inner {
-            background: white; width: 100%; height: 100%;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-        }
-
-        .slide { display: none; min-height: calc(100vh - 160px); animation: slideUp 0.4s ease-out; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #0F172A; }
+        h1, h2, h3, h4, span, p, button, div { font-style: italic; font-weight: 800; }
+        .text-gradient { background: linear-gradient(135deg, #3B82F6 0%, #D946EF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .slide { display: none; min-height: calc(100vh - 140px); animation: fadeIn 0.4s ease-out; }
         .slide.active { display: flex; flex-direction: column; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        .card-concept {
-            background: white; border-radius: 2.5rem; border: 1px solid #f1f5f9;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.05); transition: all 0.3s ease;
-        }
-        .card-concept:hover { transform: translateY(-5px); border-color: #3B82F6; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .fin-card { background: white; border-radius: 3rem; border: 1px solid #e2e8f0; box-shadow: 0 15px 35px rgba(59, 130, 246, 0.05); }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="h-[120px] px-10 flex justify-between items-center bg-white border-b border-slate-100 sticky top-0 z-50">
+    <nav class="h-[110px] px-10 flex justify-between items-center bg-white border-b-2 border-slate-100 sticky top-0 z-50">
         <div class="flex items-center gap-4">
-            <div class="fin-logo-circle">
-                <div class="fin-logo-inner">
+            <div class="w-14 h-14 rounded-full bg-fin-gradient p-[3px]">
+                <div class="w-full h-full bg-white rounded-full flex items-center justify-center">
                     <i class="fa-solid fa-comments-dollar text-gradient text-2xl"></i>
                 </div>
             </div>
             <div>
-                <h2 class="text-fin-dark text-3xl tracking-tighter uppercase leading-none">FINLINGO</h2>
-                <p class="text-gradient text-[11px] tracking-[0.3em] uppercase italic leading-none mt-1">APRENDE EL IDIOMA DEL DINERO</p>
+                <h2 class="text-fin-dark text-3xl uppercase tracking-tighter leading-none">FINLINGO</h2>
+                <p class="text-gradient text-[10px] tracking-[0.3em] uppercase italic leading-none mt-1">APRENDE EL IDIOMA DEL DINERO</p>
             </div>
         </div>
         
-        <div class="flex items-center gap-3">
-            <button onclick="showSlide(0)" class="nav-btn px-6 py-3 rounded-full bg-fin-dark text-white text-[10px] uppercase italic">Sesión 0</button>
-            <div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
-            <button onclick="showSlide(1)" class="nav-btn w-12 h-12 rounded-full border-2 border-fin-blue text-fin-blue flex items-center justify-center">1</button>
-            <button onclick="showSlide(2)" class="nav-btn w-12 h-12 rounded-full border-2 border-fin-purple text-fin-purple flex items-center justify-center">2</button>
-            <button onclick="showSlide(3)" class="nav-btn w-12 h-12 rounded-full border-2 border-fin-pink text-fin-pink flex items-center justify-center">3</button>
-            <button onclick="showSlide(4)" class="nav-btn w-12 h-12 rounded-full border-2 border-fin-dark text-fin-dark flex items-center justify-center">4</button>
-            <button onclick="showSlide(5)" class="nav-btn w-12 h-12 rounded-full bg-fin-gradient p-1 flex items-center justify-center shadow-lg"><div class="w-full h-full bg-white rounded-full flex items-center justify-center text-fin-dark"><i class="fa-solid fa-flag-checkered"></i></div></button>
+        <div class="flex gap-2">
+            <button onclick="showSlide(0)" class="px-6 py-3 rounded-full bg-fin-dark text-white text-[10px] uppercase italic">Inicio</button>
+            <button onclick="showSlide(1)" class="w-10 h-10 rounded-full border-2 border-fin-blue text-fin-blue flex items-center justify-center italic">1</button>
+            <button onclick="showSlide(2)" class="w-10 h-10 rounded-full border-2 border-fin-purple text-fin-purple flex items-center justify-center italic">2</button>
+            <button onclick="showSlide(3)" class="w-10 h-10 rounded-full border-2 border-fin-pink text-fin-pink flex items-center justify-center italic">3</button>
+            <button onclick="showSlide(4)" class="w-10 h-10 rounded-full border-2 border-fin-dark text-fin-dark flex items-center justify-center italic">4</button>
+            <button onclick="showSlide(5)" class="w-10 h-10 rounded-full bg-fin-gradient text-white flex items-center justify-center italic shadow-lg"><i class="fa-solid fa-rocket"></i></button>
         </div>
     </nav>
 
     <main class="max-w-7xl mx-auto p-8">
 
         <section id="slide-0" class="slide active">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="p-4">
-                    <h1 class="text-8xl uppercase tracking-tighter italic leading-[0.85] mb-6">BIENVENIDO A <br><span class="text-gradient">FINLINGO</span></h1>
-                    <p class="text-2xl text-slate-500 italic mb-10">Tu ruta de 4 sesiones para dominar la Ciudadanía Digital antes de conquistar el mundo financiero.</p>
-                    <div class="flex gap-4">
-                        <div class="px-6 py-4 bg-slate-100 rounded-3xl text-xs uppercase italic">#FinlingoReciénEmpieza</div>
-                        <div class="px-6 py-4 bg-fin-gradient text-white rounded-3xl text-xs uppercase italic shadow-xl">Sesión Introductoria</div>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-8 h-full">
+                <div class="flex flex-col justify-center">
+                    <h1 class="text-8xl uppercase tracking-tighter italic leading-[0.85] mb-6">BIENVENIDOS <br>A <span class="text-gradient">FINLINGO</span></h1>
+                    <p class="text-2xl text-slate-500 italic mb-8">Una ruta de 4 sesiones diseñada para formar ciudadanos digitales con criterio financiero.</p>
+                    <p class="text-sm uppercase tracking-widest text-fin-blue">¡RECIÉN ESTAMOS EMPEZANDO!</p>
                 </div>
-                <div class="bg-fin-dark rounded-[3.5rem] p-12 text-white shadow-2xl relative overflow-hidden">
-                    <div class="relative z-10">
-                        <h3 class="text-3xl uppercase italic mb-8 border-b border-white/10 pb-4">Reglas de Oro</h3>
-                        <ul class="space-y-6 text-lg italic opacity-90">
-                            <li class="flex items-center gap-4"><i class="fa-solid fa-circle-check text-fin-blue"></i> Respeto: Tu voz importa, la del otro también.</li>
-                            <li class="flex items-center gap-4"><i class="fa-solid fa-circle-check text-fin-purple"></i> Privacidad: Protegemos nuestros datos.</li>
-                            <li class="flex items-center gap-4"><i class="fa-solid fa-circle-check text-fin-pink"></i> Curiosidad: Pregunta sin miedo.</li>
-                        </ul>
-                    </div>
-                    <i class="fa-solid fa-shield-halved absolute -bottom-10 -right-10 text-[15rem] opacity-5"></i>
+                <div class="bg-fin-dark rounded-[4rem] p-12 text-white shadow-2xl">
+                    <h3 class="text-3xl uppercase italic mb-8">Reglas de Coexistencia</h3>
+                    <ul class="space-y-6 text-lg italic opacity-90">
+                        <li class="flex items-center gap-4"><i class="fa-solid fa-check text-fin-blue"></i> Respeto mutuo y escucha activa.</li>
+                        <li class="flex items-center gap-4"><i class="fa-solid fa-check text-fin-purple"></i> Lo compartido en la sesión es privado.</li>
+                        <li class="flex items-center gap-4"><i class="fa-solid fa-check text-fin-pink"></i> Participación libre y sin prejuicios.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section id="slide-1" class="slide">
-            <div class="card-concept p-16 flex flex-col justify-center h-full border-t-8 border-t-fin-blue">
-                <span class="text-fin-blue uppercase text-sm tracking-widest mb-2">01. MONTAÑA SENSATA</span>
-                <h2 class="text-7xl uppercase tracking-tighter italic mb-8">Tu <span class="text-fin-blue">Identidad</span> es Valor</h2>
+            <div class="fin-card p-16 border-t-8 border-t-fin-blue">
+                <span class="text-fin-blue uppercase text-xs tracking-widest mb-4 block">SESIÓN 01: MONTAÑA SENSATA</span>
+                <h2 class="text-7xl uppercase tracking-tighter italic mb-8">Comparte con <span class="text-fin-blue">Cuidado</span></h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="space-y-4">
-                        <h4 class="text-xl italic">Huella Digital:</h4>
-                        <p class="text-slate-500 italic text-sm">Es el rastro permanente que dejas en la red. En finanzas, una buena huella genera <strong>Confianza</strong>.</p>
+                    <div class="p-8 bg-slate-50 rounded-[3rem]">
+                        <h4 class="text-lg mb-2">Huella Digital</h4>
+                        <p class="text-sm italic opacity-70">Es el rastro permanente que dejas en internet. Influye en tu reputación futura.</p>
                     </div>
-                    <div class="space-y-4">
-                        <h4 class="text-xl italic">Permanencia:</h4>
-                        <p class="text-slate-500 italic text-sm">Lo que publicas hoy puede ser visto por tu futuro yo (o tu futuro jefe) en 10 años. ¡Sé sensato!</p>
+                    <div class="p-8 bg-slate-50 rounded-[3rem]">
+                        <h4 class="text-lg mb-2">Privacidad</h4>
+                        <p class="text-sm italic opacity-70">Aprende a distinguir qué información es pública y cuál debe ser privada.</p>
                     </div>
-                    <div class="bg-fin-blue/5 p-8 rounded-[2rem] flex flex-col items-center justify-center text-center">
-                        <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata" target="_blank" class="bg-fin-blue text-white px-8 py-4 rounded-full uppercase italic text-xs shadow-lg hover:scale-110 transition-transform">Entrenar Reputación</a>
+                    <div class="flex items-center justify-center">
+                        <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata" target="_blank" class="bg-fin-blue text-white px-8 py-4 rounded-full uppercase text-xs italic shadow-xl hover:scale-110 transition-transform">Entrenar en el Juego</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="slide-2" class="slide">
-            <div class="card-concept p-16 h-full border-t-8 border-t-fin-purple">
-                <span class="text-fin-purple uppercase text-sm tracking-widest mb-2">02. RÍO DE REALIDAD</span>
-                <h2 class="text-7xl uppercase tracking-tighter italic mb-8">Detección de <span class="text-fin-purple">Fraudes</span></h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="space-y-6">
-                        <div class="p-6 bg-slate-50 rounded-3xl">
-                            <h4 class="text-fin-purple italic mb-2 uppercase text-xs">Phishing:</h4>
-                            <p class="text-sm italic">Correos falsos que imitan a bancos para robar tus claves. Si parece urgente o sospechoso, ¡es trampa!</p>
-                        </div>
-                        <div class="p-6 bg-slate-50 rounded-3xl">
-                            <h4 class="text-fin-purple italic mb-2 uppercase text-xs">Smishing:</h4>
-                            <p class="text-sm italic">Fraudes por SMS o WhatsApp. Nunca entregues códigos de verificación a extraños.</p>
-                        </div>
+            <div class="fin-card p-16 border-t-8 border-t-fin-purple">
+                <span class="text-fin-purple uppercase text-xs tracking-widest mb-4 block">SESIÓN 02: RÍO DE REALIDAD</span>
+                <h2 class="text-7xl uppercase tracking-tighter italic mb-8">No caigas en <span class="text-fin-purple">Trampas</span></h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <p class="text-xl italic">Identifica el <strong>Phishing</strong> y el <strong>Smishing</strong>.</p>
+                        <p class="text-slate-500 italic">Desconfía de mensajes urgentes que piden datos personales o financieros.</p>
                     </div>
-                    <div class="bg-fin-purple rounded-[3rem] p-10 text-white flex flex-col justify-center items-center text-center shadow-xl">
-                        <i class="fa-solid fa-mask text-6xl mb-6 opacity-50"></i>
-                        <p class="text-lg italic mb-8">"En internet, si es demasiado bueno para ser verdad, probablemente sea una estafa."</p>
-                        <a href="https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad" target="_blank" class="bg-white text-fin-purple px-10 py-4 rounded-full uppercase italic text-xs font-black">Navegar el Río</a>
+                    <div class="bg-fin-purple rounded-[3rem] p-10 text-white text-center">
+                        <p class="text-lg italic mb-6">¿Sabes distinguir lo real de lo falso?</p>
+                        <a href="https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad" target="_blank" class="bg-white text-fin-purple px-10 py-4 rounded-full uppercase italic text-xs font-black">Cruzar el Río</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="slide-3" class="slide">
-            <div class="card-concept p-16 h-full bg-slate-900 text-white border-none overflow-hidden relative">
+            <div class="fin-card p-16 bg-slate-900 text-white overflow-hidden relative border-none">
                 <div class="relative z-10">
-                    <span class="text-fin-pink uppercase text-sm tracking-widest mb-2 block">03. TORRE DEL TESORO</span>
-                    <h2 class="text-7xl uppercase tracking-tighter italic mb-8 leading-none">Bóveda de <br><span class="text-fin-pink">Seguridad</span></h2>
+                    <span class="text-fin-pink uppercase text-xs tracking-widest mb-4 block">SESIÓN 03: TORRE DEL TESORO</span>
+                    <h2 class="text-7xl uppercase tracking-tighter italic mb-8">Protege tus <span class="text-fin-pink">Secretos</span></h2>
                     <div class="grid md:grid-cols-2 gap-12">
-                        <div class="space-y-8">
-                            <p class="text-xl italic opacity-80 leading-relaxed">Tus contraseñas son las llaves de tu dinero. Aprenderemos sobre <strong>Autenticación de Dos Factores (2FA)</strong>.</p>
-                            <div class="flex gap-4 italic text-[10px] uppercase">
-                                <span class="bg-white/10 px-4 py-2 rounded-full border border-white/20">#Passphrases</span>
-                                <span class="bg-white/10 px-4 py-2 rounded-full border border-white/20">#NoDates</span>
-                                <span class="bg-white/10 px-4 py-2 rounded-full border border-white/20">#SecurityKey</span>
-                            </div>
+                        <div class="space-y-6">
+                            <h4 class="text-2xl italic">Seguridad de Cuentas</h4>
+                            <p class="opacity-70 italic leading-relaxed">Usa contraseñas robustas y activa la Verificación de Dos Pasos (2FA) para proteger tus ahorros digitales.</p>
                         </div>
                         <div class="flex items-center justify-center">
-                            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro" target="_blank" class="bg-fin-pink text-white px-16 py-6 rounded-full uppercase text-sm font-black italic shadow-2xl hover:scale-110 transition-all">Blindar mi Tesoro</a>
+                            <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro" target="_blank" class="bg-fin-pink text-white px-12 py-5 rounded-full uppercase text-sm font-black italic shadow-2xl">Blindar la Torre</a>
                         </div>
                     </div>
                 </div>
@@ -179,54 +136,39 @@
         </section>
 
         <section id="slide-4" class="slide">
-            <div class="card-concept p-16 h-full border-t-8 border-t-fin-dark">
-                <span class="text-fin-dark uppercase text-sm tracking-widest mb-2">04. REINO AMABLE</span>
-                <h2 class="text-7xl uppercase tracking-tighter italic mb-8">El Valor de la <br><span class="text-gradient">Amabilidad</span></h2>
+            <div class="fin-card p-16 border-t-8 border-t-fin-dark">
+                <span class="text-fin-dark uppercase text-xs tracking-widest mb-4 block">SESIÓN 04: REINO AMABLE</span>
+                <h2 class="text-7xl uppercase tracking-tighter italic mb-8">Ser Amable <span class="text-gradient">es Genial</span></h2>
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="p-8 bg-slate-50 rounded-[2.5rem] italic">
-                        <h4 class="text-fin-blue mb-2">Netiqueta:</h4>
-                        <p class="text-xs text-slate-500">Reglas de comportamiento para ser un líder digital respetado. La mala educación aleja las oportunidades.</p>
+                    <div class="p-8 bg-slate-50 rounded-[3rem] italic">
+                        <h4 class="text-fin-blue mb-2">Netiqueta</h4>
+                        <p class="text-xs">Normas de comportamiento para una convivencia sana en la red.</p>
                     </div>
-                    <div class="p-8 bg-slate-50 rounded-[2.5rem] italic">
-                        <h4 class="text-fin-purple mb-2">Upstander:</h4>
-                        <p class="text-xs text-slate-500">Alguien que defiende a otros. Un ecosistema digital sano es más próspero para todos.</p>
+                    <div class="p-8 bg-slate-50 rounded-[3rem] italic">
+                        <h4 class="text-fin-purple mb-2">Ciber-Empatía</h4>
+                        <p class="text-xs">Recuerda que detrás de cada pantalla hay una persona real.</p>
                     </div>
-                    <div class="p-8 bg-slate-50 rounded-[2.5rem] italic">
-                        <h4 class="text-fin-pink mb-2">Reportar:</h4>
-                        <p class="text-xs text-slate-500">Saber usar las herramientas para detener el acoso y mantener la red segura para tus finanzas.</p>
+                    <div class="flex items-center justify-center">
+                        <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable" target="_blank" class="bg-fin-dark text-white px-8 py-4 rounded-full uppercase italic text-xs">Entrar al Reino</a>
                     </div>
-                </div>
-                <div class="mt-12 text-center">
-                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable" target="_blank" class="inline-block bg-fin-dark text-white px-12 py-5 rounded-full uppercase italic text-sm shadow-xl">Entrar al Reino</a>
                 </div>
             </div>
         </section>
 
         <section id="slide-5" class="slide">
             <div class="grid md:grid-cols-5 gap-8 h-full">
-                <div class="md:col-span-3 card-concept p-12 flex flex-col justify-center bg-fin-gradient text-white">
-                    <h2 class="text-7xl uppercase tracking-tighter italic leading-none mb-6">Misión <br>Cumplida</h2>
-                    <p class="text-2xl italic opacity-90 mb-10">Has completado los fundamentos. Ahora tienes el control total para explorar cada rincón de Interland y resolver tus dudas finales.</p>
+                <div class="md:col-span-3 fin-card p-12 bg-fin-gradient text-white">
+                    <h2 class="text-7xl uppercase tracking-tighter italic leading-none mb-6">Zona de <br>Exploración</h2>
+                    <p class="text-2xl italic opacity-90 mb-10">Es momento de despejar dudas y dominar todo el mapa de Interland.</p>
                     <div class="flex gap-4">
-                        <div class="bg-white/20 p-6 rounded-3xl border border-white/20 italic">
-                            <p class="text-xs uppercase mb-2">¿Dudas sobre Phishing?</p>
-                            <p class="text-[10px] opacity-70 leading-tight italic">Revisemos juntos los casos reales que encontraste en el Río de Realidad.</p>
-                        </div>
-                        <div class="bg-white/20 p-6 rounded-3xl border border-white/20 italic">
-                            <p class="text-xs uppercase mb-2">¿Seguridad Total?</p>
-                            <p class="text-[10px] opacity-70 leading-tight italic">Pregunta sobre cómo configurar la seguridad en tus primeras Apps de ahorro.</p>
-                        </div>
+                        <div class="bg-white/20 p-6 rounded-3xl border border-white/20 italic text-sm">Pregunta sobre casos de Phishing reales.</div>
+                        <div class="bg-white/20 p-6 rounded-3xl border border-white/20 italic text-sm">Explora el mapa completo de Interland.</div>
                     </div>
                 </div>
-                <div class="md:col-span-2 card-concept p-12 border-2 border-fin-dark flex flex-col items-center justify-center text-center">
-                    <i class="fa-solid fa-rocket text-7xl text-fin-dark mb-6"></i>
-                    <h3 class="text-3xl uppercase italic mb-4">Acceso Libre</h3>
-                    <p class="text-slate-500 italic text-sm mb-8 leading-relaxed">Entra al mapa completo, elige el mundo que más te gustó y conviértete en un Ciudadano Digital Nivel Dios.</p>
-                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="w-full bg-fin-dark text-white py-5 rounded-3xl uppercase font-black italic shadow-2xl hover:scale-105 transition-all">Ir a Interland Completo</a>
-                    <div class="mt-8">
-                        <p class="text-[10px] uppercase tracking-widest italic opacity-50 mb-1 leading-none">FINLINGO</p>
-                        <p class="text-[11px] italic font-bold text-gradient">¡RECIÉN ESTAMOS EMPEZANDO!</p>
-                    </div>
+                <div class="md:col-span-2 fin-card p-12 flex flex-col items-center justify-center text-center">
+                    <h3 class="text-3xl uppercase italic mb-6">Interland <br>Completo</h3>
+                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="w-full bg-fin-dark text-white py-5 rounded-3xl uppercase font-black italic shadow-2xl hover:scale-105 transition-all">Explorar Todo el Mapa</a>
+                    <p class="mt-8 text-gradient text-[10px] uppercase italic">FINLINGO: ¡RECIÉN ESTAMOS EMPEZANDO!</p>
                 </div>
             </div>
         </section>
@@ -237,16 +179,6 @@
         function showSlide(index) {
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
             document.getElementById('slide-' + index).classList.add('active');
-            
-            document.querySelectorAll('.nav-btn').forEach((btn, idx) => {
-                if(idx === index || (index === 0 && idx === 0)) {
-                    btn.classList.add('scale-110', 'shadow-xl');
-                    btn.style.opacity = "1";
-                } else {
-                    btn.classList.remove('scale-110', 'shadow-xl');
-                    btn.style.opacity = "0.7";
-                }
-            });
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
