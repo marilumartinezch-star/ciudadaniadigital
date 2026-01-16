@@ -21,37 +21,18 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; color: #1E22A5; }
         h1, h2, h3, h4, p, span, button { font-style: italic; font-weight: 800; }
         .text-gradient { background: linear-gradient(135deg, #2D5CFE 0%, #D63AF2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
         .slide { display: none; min-height: calc(100vh - 160px); animation: fadeIn 0.5s ease forwards; }
         .slide.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        
         .nav-btn { color: #2D5CFE; border: 2px solid #2D5CFE; transition: 0.3s; }
         .nav-btn.active { background: #1E22A5; color: white; border-color: #1E22A5; }
-
         .concept-card { background: #F8FAFF; border-radius: 2.5rem; padding: 2.5rem; border-left: 12px solid #2D5CFE; }
         .dynamic-box { background: white; border: 3px dashed #D63AF2; border-radius: 2.5rem; padding: 2rem; margin-top: 1.5rem; }
-        
-        /* Portales Mundos Interland */
-        .world-portal {
-            position: relative;
-            border-radius: 3.5rem;
-            overflow: hidden;
-            height: 350px;
-            display: flex;
-            align-items: flex-end;
-            padding: 2.5rem;
-            background-size: cover;
-            background-position: center;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            box-shadow: 0 20px 40px rgba(30, 34, 165, 0.15);
-            margin-top: 2rem;
-        }
-        .world-portal:hover { transform: scale(1.02); box-shadow: 0 30px 60px rgba(30, 34, 165, 0.25); }
+        .world-portal { position: relative; border-radius: 3.5rem; overflow: hidden; height: 350px; display: flex; align-items: flex-end; padding: 2.5rem; background-size: cover; background-position: center; transition: 0.4s; cursor: pointer; box-shadow: 0 20px 40px rgba(30, 34, 165, 0.15); margin-top: 2rem; }
+        .world-portal:hover { transform: scale(1.02); }
         .world-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30, 34, 165, 0.95) 10%, transparent 100%); }
         .world-content { position: relative; z-index: 10; color: white; width: 100%; }
-        .btn-play { background: white; color: #1E22A5; padding: 0.8rem 2rem; rounded-full; display: inline-flex; align-items: center; gap: 10px; border-radius: 99px; font-size: 12px; margin-top: 15px; }
+        .btn-play { background: white; color: #1E22A5; padding: 0.8rem 2rem; display: inline-flex; align-items: center; gap: 10px; border-radius: 99px; font-size: 12px; margin-top: 15px; }
     </style>
 </head>
 <body class="antialiased">
@@ -74,43 +55,47 @@
             <button onclick="showSlide(2)" id="btn-2" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">2</button>
             <button onclick="showSlide(3)" id="btn-3" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">3</button>
             <button onclick="showSlide(4)" id="btn-4" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">4</button>
-            <button onclick="showSlide(5)" id="btn-5" class="nav-btn px-6 py-3 rounded-full text-[10px] uppercase italic text-fin-blue">S5</button>
+            <button onclick="showSlide(5)" id="btn-5" class="nav-btn px-6 py-3 rounded-full text-[10px] uppercase italic">S5</button>
         </div>
     </nav>
 
     <main class="max-w-7xl mx-auto p-10">
 
+        <section id="slide-0" class="slide active">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-7xl uppercase tracking-tighter italic leading-none mb-6 text-fin-midnight">CIUDADANÍA <br><span class="text-gradient">KIDS</span></h1>
+                    <p class="text-2xl italic opacity-80 mb-6">Bienvenidos exploradores de 8 a 10 años. Vamos a aprender a ser geniales en Internet.</p>
+                </div>
+                <div class="bg-fin-midnight rounded-[4rem] p-12 text-white">
+                    <h3 class="text-3xl uppercase italic mb-8 border-b border-white/10 pb-4">Acuerdos de Clase</h3>
+                    <ul class="space-y-6 text-xl italic">
+                        <li><i class="fa-solid fa-star text-fin-pink mr-3"></i> Ser amables siempre.</li>
+                        <li><i class="fa-solid fa-shield text-fin-blue mr-3"></i> Respetar la privacidad.</li>
+                        <li><i class="fa-solid fa-rocket text-fin-pink mr-3"></i> FINLINGO recién está empezando.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section id="slide-1" class="slide">
             <div class="grid lg:grid-cols-2 gap-10">
                 <div>
-                    <span class="text-fin-blue uppercase tracking-widest text-xs">Lección Uno</span>
-                    <h2 class="text-6xl uppercase italic text-fin-midnight mt-2 mb-8">Sé <span class="text-fin-blue">Inteligente</span></h2>
-                    
+                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-8">Sé <span class="text-fin-blue">Inteligente</span></h2>
                     <div class="concept-card mb-6">
-                        <h4 class="text-fin-blue uppercase mb-3"><i class="fa-solid fa-brain mr-2"></i> Super Conceptos</h4>
-                        <ul class="space-y-4 text-sm italic opacity-90">
-                            <li><strong>Huella Digital:</strong> Es como el rastro de arena que dejas al caminar por la playa; en Internet, todo lo que haces deja una marca.</li>
-                            <li><strong>Reputación:</strong> Es lo que tus amigos y profes piensan de ti cuando ven tus fotos o videos.</li>
-                        </ul>
+                        <h4 class="text-fin-blue uppercase mb-3">Conceptos:</h4>
+                        <p class="text-sm italic"><strong>Huella Digital:</strong> El rastro que dejas en línea. <strong>Privacidad:</strong> Decidir quién ve tus secretos.</p>
                     </div>
-
                     <div class="dynamic-box">
-                        <h4 class="text-fin-pink uppercase mb-4"><i class="fa-solid fa-dice mr-2"></i> Dinámicas en Clase</h4>
-                        <div class="space-y-4">
-                            <p class="text-xs bg-slate-50 p-4 rounded-2xl"><strong>1. El Cofre:</strong> Dibujamos 3 cosas que JAMÁS pondríamos en redes (ej. dirección, teléfono).</p>
-                            <p class="text-xs bg-slate-50 p-4 rounded-2xl"><strong>2. El Teléfono Malogrado:</strong> ¿Cómo cambia un secreto cuando se comparte muchas veces?</p>
-                        </div>
+                        <h4 class="text-fin-pink uppercase mb-4">Ejercicios:</h4>
+                        <p class="text-xs">1. Dibuja tu "Cofre de Secretos".<br>2. Juego: ¿Qué fotos son seguras para publicar?</p>
                     </div>
                 </div>
-
-                <div class="flex flex-col justify-center">
-                    <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata')">
-                        <div class="world-overlay"></div>
-                        <div class="world-content">
-                            <h3 class="text-4xl uppercase italic mb-2">Montaña Sensata</h3>
-                            <p class="text-sm opacity-90 italic">Aprende a compartir con cuidado y protege tu rastro digital.</p>
-                            <div class="btn-play uppercase">¡Entrar al mundo! <i class="fa-solid fa-arrow-right"></i></div>
-                        </div>
+                <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata')">
+                    <div class="world-overlay"></div>
+                    <div class="world-content">
+                        <h3 class="text-4xl uppercase italic">Montaña Sensata</h3>
+                        <div class="btn-play">¡Entrar ahora! <i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </div>
             </div>
@@ -119,54 +104,77 @@
         <section id="slide-2" class="slide">
             <div class="grid lg:grid-cols-2 gap-10">
                 <div>
-                    <span class="text-fin-pink uppercase tracking-widest text-xs">Lección Dos</span>
-                    <h2 class="text-6xl uppercase italic text-fin-midnight mt-2 mb-8">Sé <span class="text-fin-pink">Alerta</span></h2>
-                    
+                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-8">Sé <span class="text-fin-pink">Alerta</span></h2>
                     <div class="concept-card border-fin-pink mb-6">
-                        <h4 class="text-fin-pink uppercase mb-3"><i class="fa-solid fa-shield-cat mr-2"></i> Super Conceptos</h4>
-                        <ul class="space-y-4 text-sm italic opacity-90">
-                            <li><strong>Phishing (Trampas):</strong> Mensajes mentirosos que intentan engañarte para robar tus tesoros (claves o datos).</li>
-                            <li><strong>Suplantación:</strong> Cuando alguien usa una foto de un amigo tuyo para hacerse pasar por él.</li>
-                        </ul>
+                        <h4 class="text-fin-pink uppercase mb-3">Conceptos:</h4>
+                        <p class="text-sm italic"><strong>Phishing:</strong> Mensajes trampa. <strong>Verificación:</strong> Asegurarte de que algo es real.</p>
                     </div>
-
                     <div class="dynamic-box" style="border-color: #2D5CFE;">
-                        <h4 class="text-fin-blue uppercase mb-4"><i class="fa-solid fa-magnifying-glass mr-2"></i> Dinámicas en Clase</h4>
-                        <div class="space-y-4">
-                            <p class="text-xs bg-slate-50 p-4 rounded-2xl"><strong>1. ¿Real o Falso?:</strong> Analizamos 5 correos. ¿Cuáles tienen errores de ortografía o premios locos?</p>
-                            <p class="text-xs bg-slate-50 p-4 rounded-2xl"><strong>2. El Amigo Desconocido:</strong> ¿Qué haces si alguien que no conoces te pide ser tu amigo en un juego?</p>
-                        </div>
+                        <h4 class="text-fin-blue uppercase mb-4">Ejercicios:</h4>
+                        <p class="text-xs">1. Detective de correos falsos.<br>2. ¿Cómo reconocer un "Bot"?</p>
                     </div>
                 </div>
+                <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad')">
+                    <div class="world-overlay" style="background: linear-gradient(to top, rgba(214,58,242,0.95), transparent);"></div>
+                    <div class="world-content">
+                        <h3 class="text-4xl uppercase italic">Río de Realidad</h3>
+                        <div class="btn-play">¡Cruzar el río! <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <div class="flex flex-col justify-center">
-                    <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad')">
-                        <div class="world-overlay" style="background: linear-gradient(to top, rgba(214,58,242,0.95) 10%, transparent 100%);"></div>
-                        <div class="world-content">
-                            <h3 class="text-4xl uppercase italic mb-2">Río de Realidad</h3>
-                            <p class="text-sm opacity-90 italic">No dejes que los engaños te arrastren. ¡Detecta las mentiras!</p>
-                            <div class="btn-play uppercase" style="color: #D63AF2;">¡Cruzar el río! <i class="fa-solid fa-fish-fins"></i></div>
-                        </div>
+        <section id="slide-3" class="slide">
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div>
+                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-8">Sé <span class="text-fin-blue">Seguro</span></h2>
+                    <div class="concept-card border-fin-midnight mb-6">
+                        <h4 class="text-fin-midnight uppercase mb-3">Conceptos:</h4>
+                        <p class="text-sm italic"><strong>Contraseña Robusta:</strong> Una llave difícil de copiar. <strong>Seguridad:</strong> Proteger tu identidad.</p>
+                    </div>
+                    <div class="dynamic-box">
+                        <h4 class="text-fin-pink uppercase mb-4">Ejercicios:</h4>
+                        <p class="text-xs">1. Crea una "Frase-Clave" con tu comida favorita.<br>2. El juego del candado digital.</p>
+                    </div>
+                </div>
+                <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro')">
+                    <div class="world-overlay" style="background: linear-gradient(to top, rgba(30,34,165,0.95), transparent);"></div>
+                    <div class="world-content">
+                        <h3 class="text-4xl uppercase italic">Torre del Tesoro</h3>
+                        <div class="btn-play">¡Blindar tesoros! <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="slide-4" class="slide">
+            <div class="grid lg:grid-cols-2 gap-10">
+                <div>
+                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-8">Sé <span class="text-gradient">Amable</span></h2>
+                    <div class="concept-card border-fin-blue mb-6">
+                        <h4 class="text-fin-blue uppercase mb-3">Conceptos:</h4>
+                        <p class="text-sm italic"><strong>Netiqueta:</strong> Buenos modales en Internet. <strong>Empatía:</strong> Ponernos en el lugar del otro.</p>
+                    </div>
+                    <div class="dynamic-box" style="border-color: #D63AF2;">
+                        <h4 class="text-fin-pink uppercase mb-4">Ejercicios:</h4>
+                        <p class="text-xs">1. El Semáforo de la amabilidad.<br>2. ¿Cómo ayudar a un amigo que está triste en línea?</p>
+                    </div>
+                </div>
+                <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable')">
+                    <div class="world-overlay" style="background: linear-gradient(to top, rgba(214,58,242,0.95), transparent);"></div>
+                    <div class="world-content">
+                        <h3 class="text-4xl uppercase italic">Reino Amable</h3>
+                        <div class="btn-play">¡Dar bondad! <i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="slide-5" class="slide">
-            <div class="bg-fin-midnight rounded-[4rem] p-16 text-center text-white shadow-2xl">
-                <i class="fa-solid fa-earth-americas text-6xl text-fin-blue mb-8"></i>
-                <h2 class="text-7xl uppercase italic tracking-tighter mb-4">Mundo <span class="text-gradient">Interland</span></h2>
-                <p class="text-2xl italic opacity-80 mb-12">¡Explorador! Es hora de recorrer todos los mundos y resolver tus dudas finales.</p>
-                
-                <div class="grid md:grid-cols-3 gap-6 mb-12">
-                    <div class="p-8 border-2 border-white/10 rounded-[2.5rem] bg-white/5 italic">Torre del Tesoro</div>
-                    <div class="p-8 border-2 border-white/10 rounded-[2.5rem] bg-white/5 italic">Reino Amable</div>
-                    <div class="p-8 border-2 border-white/10 rounded-[2.5rem] bg-white/5 italic">Preguntas de Oro</div>
-                </div>
-
-                <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="inline-flex items-center gap-4 bg-white text-fin-midnight px-12 py-5 rounded-full uppercase italic text-sm shadow-xl hover:scale-105 transition-transform">
-                    Explorar el Mapa Completo <i class="fa-solid fa-location-dot text-fin-pink"></i>
-                </a>
+            <div class="bg-fin-gradient rounded-[4rem] p-16 text-center text-white shadow-2xl">
+                <h2 class="text-7xl uppercase italic tracking-tighter mb-4">Misión Final</h2>
+                <p class="text-2xl italic opacity-80 mb-12">¡Felicidades Explorador! Es hora de jugar libremente y hacer todas tus preguntas.</p>
+                <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="bg-white text-fin-midnight px-12 py-5 rounded-full uppercase italic text-sm shadow-xl">Mapa Completo Interland <i class="fa-solid fa-location-dot ml-2"></i></a>
             </div>
         </section>
 
