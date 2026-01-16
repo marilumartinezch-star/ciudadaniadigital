@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FINLINGO | Ciudadanía Digital para Niños</title>
+    <title>FINLINGO | Exploradores Digitales 8-10</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -19,17 +19,18 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,800;1,800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; color: #1E22A5; }
-        h1, h2, h3, h4, p, span, button { font-style: italic; font-weight: 800; }
+        h1, h2, h3, h4, p, span, button, li { font-style: italic; font-weight: 800; }
         .text-gradient { background: linear-gradient(135deg, #2D5CFE 0%, #D63AF2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .slide { display: none; min-height: calc(100vh - 160px); animation: fadeIn 0.4s ease-out forwards; }
         .slide.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .nav-btn { color: #2D5CFE; border: 2px solid #2D5CFE; transition: 0.3s; }
-        .nav-btn.active { background: #1E22A5; color: white; border-color: #1E22A5; scale: 1.05; }
-        .concept-card { background: #F8FAFF; border-radius: 2rem; padding: 2rem; border-left: 10px solid #2D5CFE; height: 100%; }
-        .dynamic-card { background: #FFF5FF; border: 3px dashed #D63AF2; border-radius: 2rem; padding: 2rem; height: 100%; }
-        .world-portal { position: relative; border-radius: 3rem; overflow: hidden; height: 380px; display: flex; align-items: flex-end; padding: 2.5rem; background-size: cover; background-position: center; cursor: pointer; transition: 0.4s; margin-top: 2rem; border: 4px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .world-portal:hover { transform: translateY(-10px); border-color: #2D5CFE; }
+        .nav-btn.active { background: #1E22A5; color: white; border-color: #1E22A5; }
+        .objective-badge { background: #EEF2FF; color: #2D5CFE; padding: 0.5rem 1rem; border-radius: 1rem; font-size: 0.75rem; margin-bottom: 1rem; display: inline-block; }
+        .concept-card { background: #F8FAFF; border-radius: 2rem; padding: 2rem; border-left: 10px solid #2D5CFE; }
+        .dynamic-card { background: #FFF5FF; border: 3px dashed #D63AF2; border-radius: 2rem; padding: 2rem; }
+        .world-portal { position: relative; border-radius: 3.5rem; overflow: hidden; height: 380px; display: flex; align-items: flex-end; padding: 2.5rem; background-size: cover; background-position: center; cursor: pointer; transition: 0.4s; margin-top: 2rem; border: 4px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .world-portal:hover { transform: scale(1.02); border-color: #2D5CFE; }
         .world-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30, 34, 165, 0.9) 20%, transparent 100%); }
         .world-content { position: relative; z-index: 10; color: white; }
     </style>
@@ -47,12 +48,12 @@
             </div>
         </div>
         <div class="flex gap-2">
-            <button onclick="showSlide(0)" id="btn-0" class="nav-btn active px-6 py-3 rounded-full text-[10px] italic">INICIO</button>
+            <button onclick="showSlide(0)" id="btn-0" class="nav-btn active px-6 py-3 rounded-full text-[10px] italic">S0</button>
             <button onclick="showSlide(1)" id="btn-1" class="nav-btn w-12 h-12 rounded-full">1</button>
             <button onclick="showSlide(2)" id="btn-2" class="nav-btn w-12 h-12 rounded-full">2</button>
             <button onclick="showSlide(3)" id="btn-3" class="nav-btn w-12 h-12 rounded-full">3</button>
             <button onclick="showSlide(4)" id="btn-4" class="nav-btn w-12 h-12 rounded-full">4</button>
-            <button onclick="showSlide(5)" id="btn-5" class="nav-btn px-6 py-3 rounded-full text-[10px] italic">CIERRE</button>
+            <button onclick="showSlide(5)" id="btn-5" class="nav-btn px-6 py-3 rounded-full text-[10px] italic">S5</button>
         </div>
     </nav>
 
@@ -61,139 +62,137 @@
         <section id="slide-0" class="slide active">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h1 class="text-7xl uppercase italic leading-none mb-6 text-fin-midnight">CIUDADANÍA <br><span class="text-gradient">DIGITAL</span></h1>
-                    <p class="text-2xl italic opacity-80 mb-8">Un curso de 4 fundamentos diseñado para que navegues con inteligencia y seguridad. ¡FINLINGO recién está empezando!</p>
+                    <h1 class="text-7xl uppercase italic leading-none mb-6 text-fin-midnight">RUTA <br><span class="text-gradient">DIGITAL</span></h1>
+                    <p class="text-2xl italic opacity-80 mb-6">Curso de 4 sesiones diseñado para exploradores de 8 a 10 años. ¡FINLINGO recién está empezando!</p>
                 </div>
                 <div class="bg-fin-midnight rounded-[4rem] p-12 text-white shadow-2xl">
-                    <h3 class="text-3xl uppercase italic mb-8 border-b border-white/10 pb-4">Acuerdos de Coexistencia</h3>
+                    <h3 class="text-3xl uppercase italic mb-8 border-b border-white/10 pb-4">Nuestros Acuerdos</h3>
                     <ul class="space-y-6 text-xl italic">
-                        <li><i class="fa-solid fa-check-circle text-fin-pink mr-3"></i> Respetamos las ideas de todos.</li>
-                        <li><i class="fa-solid fa-lock text-fin-blue mr-3"></i> Lo que compartimos aquí es privado.</li>
-                        <li><i class="fa-solid fa-smile text-fin-pink mr-3"></i> Aprendemos jugando y con respeto.</li>
+                        <li><i class="fa-solid fa-heart text-fin-pink mr-3"></i> Tratamos a todos con amabilidad.</li>
+                        <li><i class="fa-solid fa-eye-slash text-fin-blue mr-3"></i> Respetamos la privacidad ajena.</li>
+                        <li><i class="fa-solid fa-hand-fist text-fin-pink mr-3"></i> Coexistimos en paz y respeto.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="slide-1" class="slide">
-            <h2 class="text-6xl uppercase italic text-fin-midnight mb-10">01. Sé <span class="text-fin-blue">Inteligente</span></h2>
+            <div class="objective-badge">OBJETIVO: Aprender qué compartir y con quién para cuidar la reputación.</div>
+            <h2 class="text-5xl uppercase italic text-fin-midnight mb-8">01. Sé <span class="text-fin-blue">Inteligente</span></h2>
             <div class="grid lg:grid-cols-2 gap-8">
                 <div class="concept-card">
-                    <h4 class="text-fin-blue uppercase mb-4">Conceptos Fundamentales</h4>
-                    <p class="text-sm italic leading-relaxed mb-4"><strong>Huella Digital:</strong> Es el rastro que dejas en Internet. Como tinta invisible que se vuelve permanente: fotos, comentarios y búsquedas forman tu imagen digital.</p>
-                    <p class="text-sm italic leading-relaxed"><strong>Privacidad:</strong> Es tu derecho a decidir qué información personal (nombre, dirección, colegio) compartes y con quién.</p>
+                    <h4 class="text-fin-blue uppercase mb-4">Conceptos Clave</h4>
+                    <p class="text-sm italic mb-4"><strong>Huella Digital:</strong> El rastro que dejas en Internet cada vez que publicas algo. ¡Es permanente!</p>
+                    <p class="text-sm italic"><strong>Reputación:</strong> Lo que los demás piensan de ti basado en lo que ven en tus redes.</p>
                 </div>
                 <div class="dynamic-card">
-                    <h4 class="text-fin-pink uppercase mb-4">Dinámicas de Clase</h4>
-                    <ul class="text-xs italic space-y-4">
-                        <li><strong>1. El Semáforo del Perfil:</strong> Analizamos publicaciones: ¿Verde (seguro), Amarillo (cuidado) o Rojo (peligro)?</li>
-                        <li><strong>2. El Rumor Digital:</strong> Vemos cómo una foto privada puede dar la vuelta al mundo en segundos.</li>
-                        <li><strong>3. Tu Yo del Futuro:</strong> ¿Qué pensará un jefe o profesor de lo que publicaste hoy?</li>
+                    <h4 class="text-fin-pink uppercase mb-4">Dinámicas</h4>
+                    <ul class="text-xs italic space-y-3">
+                        <li>1. <strong>El Cofre:</strong> Dibujamos 3 cosas privadas que nunca deben salir en Internet.</li>
+                        <li>2. <strong>Perfil Misterioso:</strong> ¿Qué nos dice la foto de un extraño sobre él?</li>
+                        <li>3. <strong>¿Lo comparto?:</strong> Roleplay sobre enviar fotos divertidas vs fotos vergonzosas.</li>
                     </ul>
                 </div>
             </div>
             <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata')">
                 <div class="world-overlay"></div>
                 <div class="world-content">
-                    <h3 class="text-4xl uppercase italic mb-2">Montaña Sensata</h3>
-                    <p class="text-sm italic opacity-90">Comparte con cuidado y protege tu rastro. ¡No dejes que tus secretos caigan en manos equivocadas!</p>
-                    <div class="mt-4 inline-block bg-white text-fin-midnight px-8 py-3 rounded-full text-xs uppercase">Jugar ahora <i class="fa-solid fa-play ml-2"></i></div>
+                    <h3 class="text-4xl uppercase italic">Montaña Sensata</h3>
+                    <p class="text-sm italic opacity-90">Comparte con cuidado. ¡Tú controlas tu rastro!</p>
                 </div>
             </div>
         </section>
 
         <section id="slide-2" class="slide">
-            <h2 class="text-6xl uppercase italic text-fin-midnight mb-10">02. Sé <span class="text-fin-pink">Alerta</span></h2>
+            <div class="objective-badge">OBJETIVO: Diferenciar lo real de lo falso y evitar estafas en línea.</div>
+            <h2 class="text-5xl uppercase italic text-fin-midnight mb-8">02. Sé <span class="text-fin-pink">Alerta</span></h2>
             <div class="grid lg:grid-cols-2 gap-8">
                 <div class="concept-card border-fin-pink">
-                    <h4 class="text-fin-pink uppercase mb-4">Conceptos Fundamentales</h4>
-                    <p class="text-sm italic leading-relaxed mb-4"><strong>Phishing:</strong> Mensajes engañosos que fingen ser de una empresa o amigo para robarte contraseñas o dinero.</p>
-                    <p class="text-sm italic leading-relaxed"><strong>Señales de Alerta:</strong> Errores de ortografía, enlaces extraños y premios que parecen "demasiado buenos para ser verdad".</p>
+                    <h4 class="text-fin-pink uppercase mb-4">Conceptos Clave</h4>
+                    <p class="text-sm italic mb-4"><strong>Phishing:</strong> Mensajes que parecen reales pero quieren robar tus secretos.</p>
+                    <p class="text-sm italic"><strong>Suplantación:</strong> Cuando alguien se hace pasar por un amigo para engañarte.</p>
                 </div>
-                <div class="dynamic-card" style="background:#EEF2FF; border-color:#2D5CFE;">
-                    <h4 class="text-fin-blue uppercase mb-4">Dinámicas de Clase</h4>
-                    <ul class="text-xs italic space-y-4">
-                        <li><strong>1. Inspector de Correos:</strong> Buscamos pistas en correos falsos para no caer en trampas.</li>
-                        <li><strong>2. El Test del Extraño:</strong> ¿Qué haces si alguien que no conoces te pide fotos en un juego?</li>
-                        <li><strong>3. Realidad vs Ficción:</strong> Aprendemos que no todo lo que vemos en pantalla es verdad.</li>
+                <div class="dynamic-card" style="border-color: #2D5CFE; background: #EEF2FF;">
+                    <h4 class="text-fin-blue uppercase mb-4">Dinámicas</h4>
+                    <ul class="text-xs italic space-y-3">
+                        <li>1. <strong>Inspector de Mensajes:</strong> Buscamos errores en correos de "premios gratis".</li>
+                        <li>2. <strong>¿Es un Bot?:</strong> Analizamos chats para ver si hablamos con humanos o máquinas.</li>
+                        <li>3. <strong>Cero Anzuelos:</strong> Juego de "pesca" de enlaces seguros vs peligrosos.</li>
                     </ul>
                 </div>
             </div>
             <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad')">
                 <div class="world-overlay" style="background: linear-gradient(to top, rgba(214,58,242,0.9), transparent);"></div>
                 <div class="world-content">
-                    <h3 class="text-4xl uppercase italic mb-2">Río de Realidad</h3>
-                    <p class="text-sm italic opacity-90">Identifica las trampas y navega por aguas seguras. ¡No muerdas el anzuelo!</p>
-                    <div class="mt-4 inline-block bg-white text-fin-pink px-8 py-3 rounded-full text-xs uppercase">Jugar ahora <i class="fa-solid fa-play ml-2"></i></div>
+                    <h3 class="text-4xl uppercase italic">Río de Realidad</h3>
+                    <p class="text-sm italic opacity-90">¡No caigas en la trampa! Aprende a ver la verdad.</p>
                 </div>
             </div>
         </section>
 
         <section id="slide-3" class="slide">
-            <h2 class="text-6xl uppercase italic text-fin-midnight mb-10">03. Sé <span class="text-fin-blue">Seguro</span></h2>
+            <div class="objective-badge">OBJETIVO: Crear contraseñas seguras y proteger dispositivos personales.</div>
+            <h2 class="text-5xl uppercase italic text-fin-midnight mb-8">03. Sé <span class="text-fin-blue">Seguro</span></h2>
             <div class="grid lg:grid-cols-2 gap-8">
                 <div class="concept-card border-fin-midnight">
-                    <h4 class="text-fin-midnight uppercase mb-4">Conceptos Fundamentales</h4>
-                    <p class="text-sm italic leading-relaxed mb-4"><strong>Contraseña Robusta:</strong> Una llave digital difícil de adivinar. Debe tener números, símbolos y no usar datos obvios como tu nombre.</p>
-                    <p class="text-sm italic leading-relaxed"><strong>Seguridad de Dispositivos:</strong> La importancia de cerrar sesión en computadoras públicas y bloquear tus equipos.</p>
+                    <h4 class="text-fin-midnight uppercase mb-4">Conceptos Clave</h4>
+                    <p class="text-sm italic mb-4"><strong>Contraseña Robusta:</strong> Una llave digital larga con letras, números y símbolos.</p>
+                    <p class="text-sm italic"><strong>Privacidad de Cuenta:</strong> Configurar quién puede ver nuestro perfil.</p>
                 </div>
                 <div class="dynamic-card">
-                    <h4 class="text-fin-pink uppercase mb-4">Dinámicas de Clase</h4>
-                    <ul class="text-xs italic space-y-4">
-                        <li><strong>1. La Frase Maestra:</strong> Creamos claves usando la primera letra de cada palabra de una canción favorita.</li>
-                        <li><strong>2. El Juego del Candado:</strong> Simulamos qué pasa cuando alguien adivina una clave débil.</li>
-                        <li><strong>3. Blindaje Digital:</strong> Lista de verificación para proteger tus cuentas de juegos y redes.</li>
+                    <h4 class="text-fin-pink uppercase mb-4">Dinámicas</h4>
+                    <ul class="text-xs italic space-y-3">
+                        <li>1. <strong>La Clave Maestra:</strong> Creamos claves usando canciones (solo iniciales).</li>
+                        <li>2. <strong>Hackers Amigables:</strong> Intentamos adivinar claves débiles de compañeros (ficticias).</li>
+                        <li>3. <strong>Cerrar Sesión:</strong> Carrera de relevos para recordar cerrar cuentas en la escuela.</li>
                     </ul>
                 </div>
             </div>
             <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?auto=format&fit=crop&w=1200&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro')">
                 <div class="world-overlay" style="background: linear-gradient(to top, rgba(30,34,165,0.9), transparent);"></div>
                 <div class="world-content">
-                    <h3 class="text-4xl uppercase italic mb-2">Torre del Tesoro</h3>
-                    <p class="text-sm italic opacity-90">Protege tu información más valiosa. ¡Blinda tu castillo digital!</p>
-                    <div class="mt-4 inline-block bg-white text-fin-midnight px-8 py-3 rounded-full text-xs uppercase">Jugar ahora <i class="fa-solid fa-play ml-2"></i></div>
+                    <h3 class="text-4xl uppercase italic">Torre del Tesoro</h3>
+                    <p class="text-sm italic opacity-90">Blinda tus tesoros. ¡Tus claves son tus llaves!</p>
                 </div>
             </div>
         </section>
 
         <section id="slide-4" class="slide">
-            <h2 class="text-6xl uppercase italic text-fin-midnight mb-10">04. Sé <span class="text-gradient">Amable</span></h2>
+            <div class="objective-badge">OBJETIVO: Fomentar el respeto digital y aprender a reportar el acoso.</div>
+            <h2 class="text-5xl uppercase italic text-fin-midnight mb-8">04. Sé <span class="text-gradient">Amable</span></h2>
             <div class="grid lg:grid-cols-2 gap-8">
                 <div class="concept-card border-fin-blue">
-                    <h4 class="text-fin-blue uppercase mb-4">Conceptos Fundamentales</h4>
-                    <p class="text-sm italic leading-relaxed mb-4"><strong>Netiqueta:</strong> Es la etiqueta de Internet. Tratar a los demás con el mismo respeto con el que nos gusta que nos traten en persona.</p>
-                    <p class="text-sm italic leading-relaxed"><strong>Defensor:</strong> Aquel que no se queda callado cuando ve acoso (bullying) y ayuda a la persona afectada.</p>
+                    <h4 class="text-fin-blue uppercase mb-4">Conceptos Clave</h4>
+                    <p class="text-sm italic mb-4"><strong>Netiqueta:</strong> Reglas de cortesía para hablar con otros en línea.</p>
+                    <p class="text-sm italic"><strong>Defensor:</strong> Aquel que ayuda a un amigo cuando alguien lo molesta.</p>
                 </div>
-                <div class="dynamic-card" style="background:#FFF0FF; border-color:#D63AF2;">
-                    <h4 class="text-fin-pink uppercase mb-4">Dinámicas de Clase</h4>
-                    <ul class="text-xs italic space-y-4">
-                        <li><strong>1. El Filtro de Amabilidad:</strong> Antes de comentar, preguntamos: ¿Es verdad? ¿Es necesario? ¿Es amable?</li>
-                        <li><strong>2. Cadena de Elogios:</strong> Creamos una red de comentarios positivos para combatir el odio.</li>
-                        <li><strong>3. Reportar no es Chismear:</strong> Aprendemos cuándo avisar a un adulto sobre conductas malas.</li>
+                <div class="dynamic-card" style="border-color: #D63AF2; background: #FFF0FF;">
+                    <h4 class="text-fin-pink uppercase mb-4">Dinámicas</h4>
+                    <ul class="text-xs italic space-y-3">
+                        <li>1. <strong>El Semáforo Amable:</strong> ¿Tu comentario ayuda o hiere?</li>
+                        <li>2. <strong>Buzón de Elogios:</strong> Enviamos mensajes positivos a nuestros compañeros.</li>
+                        <li>3. <strong>¿Cuándo avisar?:</strong> Aprendemos a reportar comentarios malos a los adultos.</li>
                     </ul>
                 </div>
             </div>
             <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=1200&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable')">
                 <div class="world-overlay" style="background: linear-gradient(to top, rgba(214,58,242,0.9), transparent);"></div>
                 <div class="world-content">
-                    <h3 class="text-4xl uppercase italic mb-2">Reino Amable</h3>
-                    <p class="text-sm italic opacity-90">Dile NO al acoso y SI a la buena onda. ¡Difunde la amabilidad!</p>
-                    <div class="mt-4 inline-block bg-white text-fin-pink px-8 py-3 rounded-full text-xs uppercase">Jugar ahora <i class="fa-solid fa-play ml-2"></i></div>
+                    <h3 class="text-4xl uppercase italic">Reino Amable</h3>
+                    <p class="text-sm italic opacity-90">La amabilidad es tu superpoder. ¡Úsala!</p>
                 </div>
             </div>
         </section>
 
         <section id="slide-5" class="slide">
             <div class="bg-fin-gradient rounded-[4rem] p-16 text-center text-white shadow-2xl">
-                <h2 class="text-7xl uppercase italic tracking-tighter mb-4">Misión <br>Cumplida</h2>
-                <p class="text-2xl italic opacity-90 mb-10">¡Felicidades Explorador! Has completado los fundamentos. Ahora es tu turno de recorrer todo Interland y resolver tus dudas finales.</p>
+                <h2 class="text-7xl uppercase italic tracking-tighter mb-4">MISIÓN <br>CUMPLIDA</h2>
+                <p class="text-2xl italic opacity-90 mb-10">Has aprendido los 4 pilares fundamentales. Ahora puedes explorar Interland libremente y resolver tus dudas.</p>
                 <div class="grid md:grid-cols-2 gap-6 mb-12">
-                    <div class="p-8 bg-white/10 rounded-3xl italic">Resolución de preguntas finales</div>
-                    <div class="p-8 bg-white/10 rounded-3xl italic">Práctica libre en cualquier mundo</div>
+                    <div class="p-8 bg-white/10 rounded-3xl italic">Dudas y preguntas finales con los profes</div>
+                    <div class="p-8 bg-white/10 rounded-3xl italic">Exploración de mapas adicionales</div>
                 </div>
-                <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="inline-block bg-white text-fin-midnight px-14 py-6 rounded-full uppercase italic text-sm shadow-xl hover:scale-105 transition-transform">
-                    Explorar Interland Completo <i class="fa-solid fa-earth-americas ml-2"></i>
-                </a>
+                <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="bg-white text-fin-midnight px-12 py-5 rounded-full uppercase italic text-sm shadow-xl">Mapa Completo Interland <i class="fa-solid fa-location-dot ml-2"></i></a>
             </div>
         </section>
 
