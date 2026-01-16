@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FINLINGO | Exploradores Digitales 8-10</title>
+    <title>FINLINGO | Ciudadanía Digital Kids</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -21,23 +21,22 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; color: #1E22A5; }
         h1, h2, h3, h4, p, span, button { font-style: italic; font-weight: 800; }
         .text-gradient { background: linear-gradient(135deg, #2D5CFE 0%, #D63AF2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .slide { display: none; min-height: calc(100vh - 160px); animation: fadeIn 0.5s ease forwards; }
+        .slide { display: none; min-height: calc(100vh - 160px); animation: fadeIn 0.4s ease-out forwards; }
         .slide.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
         .nav-btn { color: #2D5CFE; border: 2px solid #2D5CFE; transition: 0.3s; }
         .nav-btn.active { background: #1E22A5; color: white; border-color: #1E22A5; }
-        .concept-card { background: #F8FAFF; border-radius: 2.5rem; padding: 2.5rem; border-left: 12px solid #2D5CFE; }
-        .dynamic-box { background: white; border: 3px dashed #D63AF2; border-radius: 2.5rem; padding: 2rem; margin-top: 1.5rem; }
-        .world-portal { position: relative; border-radius: 3.5rem; overflow: hidden; height: 350px; display: flex; align-items: flex-end; padding: 2.5rem; background-size: cover; background-position: center; transition: 0.4s; cursor: pointer; box-shadow: 0 20px 40px rgba(30, 34, 165, 0.15); margin-top: 2rem; }
-        .world-portal:hover { transform: scale(1.02); }
-        .world-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30, 34, 165, 0.95) 10%, transparent 100%); }
-        .world-content { position: relative; z-index: 10; color: white; width: 100%; }
-        .btn-play { background: white; color: #1E22A5; padding: 0.8rem 2rem; display: inline-flex; align-items: center; gap: 10px; border-radius: 99px; font-size: 12px; margin-top: 15px; }
+        .concept-card { background: #F8FAFF; border-radius: 2rem; padding: 2rem; border-left: 10px solid #2D5CFE; margin-bottom: 1.5rem; }
+        .dynamic-box { background: #FFF0FF; border: 3px dashed #D63AF2; border-radius: 2rem; padding: 2rem; }
+        .world-portal { position: relative; border-radius: 3rem; overflow: hidden; height: 400px; display: flex; align-items: flex-end; padding: 2.5rem; background-size: cover; background-position: center; cursor: pointer; transition: 0.4s; }
+        .world-portal:hover { transform: translateY(-10px); }
+        .world-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(30, 34, 165, 0.9) 15%, transparent 100%); }
+        .world-content { position: relative; z-index: 10; color: white; }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <nav class="h-[120px] px-12 flex justify-between items-center bg-white sticky top-0 z-50 border-b border-slate-50">
+    <nav class="h-[120px] px-12 flex justify-between items-center bg-white sticky top-0 z-50 border-b border-slate-100">
         <div class="flex items-center gap-5">
             <div class="w-[60px] h-[60px] rounded-full p-1 bg-fin-gradient flex items-center justify-center">
                 <div class="bg-white w-full h-full rounded-full flex items-center justify-center">
@@ -45,57 +44,45 @@
                 </div>
             </div>
             <div>
-                <h2 class="text-fin-midnight text-4xl tracking-tighter uppercase leading-none italic">FINLINGO</h2>
+                <h2 class="text-fin-midnight text-4xl tracking-tighter uppercase italic leading-none">FINLINGO</h2>
                 <p class="text-gradient text-[10px] tracking-[0.4em] uppercase italic leading-none mt-1">APRENDE EL IDIOMA DEL DINERO</p>
             </div>
         </div>
-        <div class="flex items-center gap-2">
-            <button onclick="showSlide(0)" id="btn-0" class="nav-btn active px-6 py-3 rounded-full text-[10px] uppercase italic">S0</button>
-            <button onclick="showSlide(1)" id="btn-1" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">1</button>
-            <button onclick="showSlide(2)" id="btn-2" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">2</button>
-            <button onclick="showSlide(3)" id="btn-3" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">3</button>
-            <button onclick="showSlide(4)" id="btn-4" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">4</button>
-            <button onclick="showSlide(5)" id="btn-5" class="nav-btn px-6 py-3 rounded-full text-[10px] uppercase italic">S5</button>
+        <div class="flex gap-2">
+            <button onclick="showSlide(0)" id="btn-0" class="nav-btn active px-6 py-3 rounded-full text-[10px] italic">INICIO</button>
+            <button onclick="showSlide(1)" id="btn-1" class="nav-btn w-12 h-12 rounded-full">1</button>
+            <button onclick="showSlide(2)" id="btn-2" class="nav-btn w-12 h-12 rounded-full">2</button>
+            <button onclick="showSlide(3)" id="btn-3" class="nav-btn w-12 h-12 rounded-full">3</button>
+            <button onclick="showSlide(4)" id="btn-4" class="nav-btn w-12 h-12 rounded-full">4</button>
+            <button onclick="showSlide(5)" id="btn-5" class="nav-btn px-6 py-3 rounded-full text-[10px] italic">MAPA</button>
         </div>
     </nav>
 
     <main class="max-w-7xl mx-auto p-10">
 
-        <section id="slide-0" class="slide active">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-7xl uppercase tracking-tighter italic leading-none mb-6 text-fin-midnight">CIUDADANÍA <br><span class="text-gradient">KIDS</span></h1>
-                    <p class="text-2xl italic opacity-80 mb-6">Bienvenidos exploradores de 8 a 10 años. Vamos a aprender a ser geniales en Internet.</p>
-                </div>
-                <div class="bg-fin-midnight rounded-[4rem] p-12 text-white">
-                    <h3 class="text-3xl uppercase italic mb-8 border-b border-white/10 pb-4">Acuerdos de Clase</h3>
-                    <ul class="space-y-6 text-xl italic">
-                        <li><i class="fa-solid fa-star text-fin-pink mr-3"></i> Ser amables siempre.</li>
-                        <li><i class="fa-solid fa-shield text-fin-blue mr-3"></i> Respetar la privacidad.</li>
-                        <li><i class="fa-solid fa-rocket text-fin-pink mr-3"></i> FINLINGO recién está empezando.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
         <section id="slide-1" class="slide">
             <div class="grid lg:grid-cols-2 gap-10">
                 <div>
-                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-8">Sé <span class="text-fin-blue">Inteligente</span></h2>
-                    <div class="concept-card mb-6">
-                        <h4 class="text-fin-blue uppercase mb-3">Conceptos:</h4>
-                        <p class="text-sm italic"><strong>Huella Digital:</strong> El rastro que dejas en línea. <strong>Privacidad:</strong> Decidir quién ve tus secretos.</p>
+                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-6">Sé <span class="text-fin-blue">Inteligente</span></h2>
+                    <div class="concept-card">
+                        <h4 class="text-fin-blue text-sm uppercase mb-2">Conceptos Clave [cite: 588, 613]</h4>
+                        <ul class="text-sm italic space-y-2 opacity-90">
+                            <li><strong>Rastro Digital:</strong> Toda la información sobre ti en línea (fotos, "Me gusta", comentarios). ¡Es como un marcador permanente que no se borra! [cite: 613, 641]</li>
+                            <li><strong>Reputación:</strong> La imagen que otros se forman de ti según lo que publicas[cite: 618].</li>
+                        </ul>
                     </div>
                     <div class="dynamic-box">
-                        <h4 class="text-fin-pink uppercase mb-4">Ejercicios:</h4>
-                        <p class="text-xs">1. Dibuja tu "Cofre de Secretos".<br>2. Juego: ¿Qué fotos son seguras para publicar?</p>
+                        <h4 class="text-fin-pink text-sm uppercase mb-3">Dinámica: "¿De quién es el perfil?" [cite: 681]</h4>
+                        <p class="text-xs italic leading-relaxed">
+                            Analizaremos datos de personajes ficticios. Los alumnos deben escribir una descripción de cómo creen que es esa persona solo por su información en línea. Al final, revelamos la verdad para ver cuántas conjeturas falsas hicimos[cite: 668, 672].
+                        </p>
                     </div>
                 </div>
                 <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata')">
                     <div class="world-overlay"></div>
                     <div class="world-content">
                         <h3 class="text-4xl uppercase italic">Montaña Sensata</h3>
-                        <div class="btn-play">¡Entrar ahora! <i class="fa-solid fa-arrow-right"></i></div>
+                        <p class="text-xs opacity-80 italic mt-2">Comparte con cuidado y protege tu rastro digital.</p>
                     </div>
                 </div>
             </div>
@@ -104,21 +91,26 @@
         <section id="slide-2" class="slide">
             <div class="grid lg:grid-cols-2 gap-10">
                 <div>
-                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-8">Sé <span class="text-fin-pink">Alerta</span></h2>
-                    <div class="concept-card border-fin-pink mb-6">
-                        <h4 class="text-fin-pink uppercase mb-3">Conceptos:</h4>
-                        <p class="text-sm italic"><strong>Phishing:</strong> Mensajes trampa. <strong>Verificación:</strong> Asegurarte de que algo es real.</p>
+                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-6">Sé <span class="text-fin-pink">Alerta</span></h2>
+                    <div class="concept-card border-fin-pink">
+                        <h4 class="text-fin-pink text-sm uppercase mb-2">Conceptos Clave [cite: 498, 105]</h4>
+                        <ul class="text-sm italic space-y-2 opacity-90">
+                            <li><strong>Phishing:</strong> Intentos de engañarte para robar tus datos valiosos[cite: 112].</li>
+                            <li><strong>Suplantación:</strong> Crear cuentas falsas usando fotos de otros para engañar[cite: 115].</li>
+                        </ul>
                     </div>
-                    <div class="dynamic-box" style="border-color: #2D5CFE;">
-                        <h4 class="text-fin-blue uppercase mb-4">Ejercicios:</h4>
-                        <p class="text-xs">1. Detective de correos falsos.<br>2. ¿Cómo reconocer un "Bot"?</p>
+                    <div class="dynamic-box" style="background: #E8F0FF; border-color: #2D5CFE;">
+                        <h4 class="text-fin-blue text-sm uppercase mb-3">Dinámica: "Detective de Bots" [cite: 144]</h4>
+                        <p class="text-xs italic leading-relaxed">
+                            Haremos una representación de mensajes sospechosos. Los estudiantes deben identificar señales de alerta: ¿Hay errores de ortografía? ¿La URL es extraña? ¿Me ofrecen premios increíbles?[cite: 131, 137].
+                        </p>
                     </div>
                 </div>
                 <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad')">
-                    <div class="world-overlay" style="background: linear-gradient(to top, rgba(214,58,242,0.95), transparent);"></div>
+                    <div class="world-overlay" style="background: linear-gradient(to top, rgba(214, 58, 242, 0.9) 15%, transparent 100%);"></div>
                     <div class="world-content">
-                        <h3 class="text-4xl uppercase italic">Río de Realidad</h3>
-                        <div class="btn-play">¡Cruzar el río! <i class="fa-solid fa-arrow-right"></i></div>
+                        <h3 class="text-4xl uppercase italic">Río de la Realidad</h3>
+                        <p class="text-xs opacity-80 italic mt-2">No caigas en trampas. Aprende a diferenciar lo real de lo falso.</p>
                     </div>
                 </div>
             </div>
@@ -127,21 +119,26 @@
         <section id="slide-3" class="slide">
             <div class="grid lg:grid-cols-2 gap-10">
                 <div>
-                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-8">Sé <span class="text-fin-blue">Seguro</span></h2>
-                    <div class="concept-card border-fin-midnight mb-6">
-                        <h4 class="text-fin-midnight uppercase mb-3">Conceptos:</h4>
-                        <p class="text-sm italic"><strong>Contraseña Robusta:</strong> Una llave difícil de copiar. <strong>Seguridad:</strong> Proteger tu identidad.</p>
+                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-6">Sé <span class="text-fin-blue">Seguro</span></h2>
+                    <div class="concept-card border-fin-midnight">
+                        <h4 class="text-fin-midnight text-sm uppercase mb-2">Conceptos Clave [cite: 499, 162]</h4>
+                        <ul class="text-sm italic space-y-2 opacity-90">
+                            <li><strong>Contraseña Robusta:</strong> Una combinación larga y compleja de letras, números y símbolos[cite: 171].</li>
+                            <li><strong>Seguridad:</strong> Protección de tus dispositivos y software[cite: 163].</li>
+                        </ul>
                     </div>
                     <div class="dynamic-box">
-                        <h4 class="text-fin-pink uppercase mb-4">Ejercicios:</h4>
-                        <p class="text-xs">1. Crea una "Frase-Clave" con tu comida favorita.<br>2. El juego del candado digital.</p>
+                        <h4 class="text-fin-pink text-sm uppercase mb-3">Dinámica: "La Frase Maestra" [cite: 184]</h4>
+                        <p class="text-xs italic leading-relaxed">
+                            Cada equipo elige una frase de una canción o película. Usaremos las iniciales para crear una contraseña, cambiando letras por números (ej: "Fui a la escuela" -> "Fu14e#"). ¡Votaremos por la más difícil de hackear![cite: 188, 206].
+                        </p>
                     </div>
                 </div>
                 <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro')">
-                    <div class="world-overlay" style="background: linear-gradient(to top, rgba(30,34,165,0.95), transparent);"></div>
+                    <div class="world-overlay" style="background: linear-gradient(to top, rgba(30, 34, 165, 0.9) 15%, transparent 100%);"></div>
                     <div class="world-content">
                         <h3 class="text-4xl uppercase italic">Torre del Tesoro</h3>
-                        <div class="btn-play">¡Blindar tesoros! <i class="fa-solid fa-arrow-right"></i></div>
+                        <p class="text-xs opacity-80 italic mt-2">Protege tus secretos y blinda tus cuentas.</p>
                     </div>
                 </div>
             </div>
@@ -150,31 +147,28 @@
         <section id="slide-4" class="slide">
             <div class="grid lg:grid-cols-2 gap-10">
                 <div>
-                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-8">Sé <span class="text-gradient">Amable</span></h2>
-                    <div class="concept-card border-fin-blue mb-6">
-                        <h4 class="text-fin-blue uppercase mb-3">Conceptos:</h4>
-                        <p class="text-sm italic"><strong>Netiqueta:</strong> Buenos modales en Internet. <strong>Empatía:</strong> Ponernos en el lugar del otro.</p>
+                    <h2 class="text-6xl uppercase italic text-fin-midnight mb-6">Sé <span class="text-gradient">Amable</span></h2>
+                    <div class="concept-card border-fin-blue">
+                        <h4 class="text-fin-blue text-sm uppercase mb-2">Conceptos Clave [cite: 500, 267]</h4>
+                        <ul class="text-sm italic space-y-2 opacity-90">
+                            <li><strong>Defensor:</strong> Persona que interviene positivamente al ver acoso[cite: 271].</li>
+                            <li><strong>Netiqueta:</strong> Reglas para tratar a los demás como nos gustaría ser tratados[cite: 266].</li>
+                        </ul>
                     </div>
-                    <div class="dynamic-box" style="border-color: #D63AF2;">
-                        <h4 class="text-fin-pink uppercase mb-4">Ejercicios:</h4>
-                        <p class="text-xs">1. El Semáforo de la amabilidad.<br>2. ¿Cómo ayudar a un amigo que está triste en línea?</p>
+                    <div class="dynamic-box" style="border-color: #2D5CFE; background: #EEF2FF;">
+                        <h4 class="text-fin-blue text-sm uppercase mb-3">Dinámica: "De Espectador a Defensor" [cite: 278]</h4>
+                        <p class="text-xs italic leading-relaxed">
+                            Analizaremos situaciones de hostigamiento. Los alumnos deben proponer formas de ayudar a la víctima sin atacar al agresor, creando una "montaña de amabilidad" con comentarios positivos[cite: 286, 290].
+                        </p>
                     </div>
                 </div>
                 <div class="world-portal" style="background-image: url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=800&q=80');" onclick="window.open('https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable')">
-                    <div class="world-overlay" style="background: linear-gradient(to top, rgba(214,58,242,0.95), transparent);"></div>
+                    <div class="world-overlay" style="background: linear-gradient(to top, rgba(214, 58, 242, 0.9) 15%, transparent 100%);"></div>
                     <div class="world-content">
                         <h3 class="text-4xl uppercase italic">Reino Amable</h3>
-                        <div class="btn-play">¡Dar bondad! <i class="fa-solid fa-arrow-right"></i></div>
+                        <p class="text-xs opacity-80 italic mt-2">Ser amable es genial. ¡Difunde vibras positivas!</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="slide-5" class="slide">
-            <div class="bg-fin-gradient rounded-[4rem] p-16 text-center text-white shadow-2xl">
-                <h2 class="text-7xl uppercase italic tracking-tighter mb-4">Misión Final</h2>
-                <p class="text-2xl italic opacity-80 mb-12">¡Felicidades Explorador! Es hora de jugar libremente y hacer todas tus preguntas.</p>
-                <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="bg-white text-fin-midnight px-12 py-5 rounded-full uppercase italic text-sm shadow-xl">Mapa Completo Interland <i class="fa-solid fa-location-dot ml-2"></i></a>
             </div>
         </section>
 
@@ -184,7 +178,8 @@
         function showSlide(index) {
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('slide-' + index).classList.add('active');
+            const target = document.getElementById('slide-' + index);
+            if(target) target.classList.add('active');
             const btn = document.getElementById('btn-' + index);
             if(btn) btn.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
