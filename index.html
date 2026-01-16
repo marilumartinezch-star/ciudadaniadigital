@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FINLINGO | Ruta de Ciudadanía Digital</title>
+    <title>FINLINGO | Academia Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -24,143 +24,161 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,800;1,800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; color: #1E22A5; margin: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; color: #1E22A5; }
         h1, h2, h3, h4, span, p, button, div { font-style: italic; font-weight: 800; }
         .text-gradient { background: linear-gradient(135deg, #2D5CFE 0%, #D63AF2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .slide { display: none; min-height: calc(100vh - 160px); animation: fadeIn 0.4s ease-out; }
+        .slide { display: none; min-height: calc(100vh - 160px); animation: fadeIn 0.4s ease; }
         .slide.active { display: flex; flex-direction: column; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .nav-btn { color: #2D5CFE; border: 2px solid #2D5CFE; transition: 0.3s; }
         .nav-btn.active { background: #1E22A5; color: white; border-color: #1E22A5; }
-        .card-content { border-radius: 3.5rem; background: #F9FAFF; border: 2px solid #F0F3FF; padding: 3rem; }
+        .age-tag { padding: 4px 12px; border-radius: 8px; font-size: 10px; text-transform: uppercase; margin-right: 8px; }
+        .tag-kids { background: #E0E7FF; color: #2D5CFE; }
+        .tag-teens { background: #FAE8FF; color: #D63AF2; }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="h-[120px] px-12 flex justify-between items-center bg-white sticky top-0 z-50">
-        <div class="flex items-center gap-5">
-            <div class="w-[60px] h-[60px] rounded-full p-1 bg-fin-gradient flex items-center justify-center">
+    <nav class="h-[100px] px-10 flex justify-between items-center bg-white sticky top-0 z-50 border-b border-slate-50">
+        <div class="flex items-center gap-4">
+            <div class="w-[50px] h-[50px] rounded-full p-1 bg-fin-gradient flex items-center justify-center">
                 <div class="bg-white w-full h-full rounded-full flex items-center justify-center">
-                    <i class="fa-solid fa-comments-dollar text-gradient text-2xl"></i>
+                    <i class="fa-solid fa-shield-halved text-gradient text-xl"></i>
                 </div>
             </div>
             <div>
-                <h2 class="text-fin-midnight text-4xl tracking-tighter uppercase leading-none">FINLINGO</h2>
-                <p class="text-gradient text-[10px] tracking-[0.4em] uppercase mt-1 leading-none">APRENDE EL IDIOMA DEL DINERO</p>
+                <h2 class="text-fin-midnight text-3xl tracking-tighter uppercase leading-none">FINLINGO</h2>
+                <p class="text-gradient text-[8px] tracking-[0.3em] uppercase mt-1 leading-none italic">CIUDADANÍA DIGITAL PROFESIONAL</p>
             </div>
         </div>
-        <div class="flex items-center gap-2">
-            <button onclick="showSlide(0)" id="btn-0" class="nav-btn active px-6 py-3 rounded-full text-[10px] uppercase">Sesión 0</button>
-            <button onclick="showSlide(1)" id="btn-1" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">1</button>
-            <button onclick="showSlide(2)" id="btn-2" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">2</button>
-            <button onclick="showSlide(3)" id="btn-3" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">3</button>
-            <button onclick="showSlide(4)" id="btn-4" class="nav-btn w-12 h-12 rounded-full flex items-center justify-center">4</button>
-            <button onclick="showSlide(5)" id="btn-5" class="w-12 h-12 rounded-full bg-fin-gradient flex items-center justify-center text-white"><i class="fa-solid fa-rocket"></i></button>
+        <div class="flex gap-2">
+            <button onclick="showSlide(0)" id="btn-0" class="nav-btn active px-5 py-2 rounded-full text-[10px] uppercase">Sesión 0</button>
+            <button onclick="showSlide(1)" id="btn-1" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center">1</button>
+            <button onclick="showSlide(2)" id="btn-2" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center">2</button>
+            <button onclick="showSlide(3)" id="btn-3" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center">3</button>
+            <button onclick="showSlide(4)" id="btn-4" class="nav-btn w-10 h-10 rounded-full flex items-center justify-center">4</button>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto p-10">
+    <main class="max-w-6xl mx-auto p-8">
 
         <section id="slide-0" class="slide active">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h1 class="text-7xl uppercase tracking-tighter leading-[0.85] mb-8 text-fin-midnight">BIENVENIDOS A <br><span class="text-gradient">FINLINGO</span></h1>
-                    <p class="text-2xl opacity-80 mb-8 italic">Iniciamos una ruta de 4 sesiones diseñada para transformar a los adolescentes en ciudadanos digitales expertos.</p>
-                    <div class="bg-fin-blue/10 p-6 rounded-3xl border-l-8 border-fin-blue">
-                        <p class="text-sm uppercase tracking-widest text-fin-midnight">¡RECIÉN ESTAMOS EMPEZANDO!</p>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="flex flex-col justify-center">
+                    <h1 class="text-6xl uppercase tracking-tighter leading-none mb-6 text-fin-midnight">RUTA DE <br><span class="text-gradient">4 SESIONES</span></h1>
+                    <p class="text-xl mb-6 italic opacity-80">Un programa integral para dos niveles: Exploradores (8-10) y Líderes (11-17).</p>
+                    <div class="flex gap-4">
+                        <span class="age-tag tag-kids">8-10 Años</span>
+                        <span class="age-tag tag-teens">11-17 Años</span>
                     </div>
                 </div>
-                <div class="bg-fin-midnight rounded-[4rem] p-12 text-white">
-                    <h3 class="text-3xl uppercase mb-8 border-b border-white/10 pb-4">Reglas de Coexistencia</h3>
-                    <ul class="space-y-6 text-xl italic opacity-90">
-                        <li><i class="fa-solid fa-check text-fin-pink mr-4"></i> Escucha activa y profesional.</li>
-                        <li><i class="fa-solid fa-check text-fin-pink mr-4"></i> Respeto a la huella digital ajena.</li>
-                        <li><i class="fa-solid fa-check text-fin-pink mr-4"></i> Privacidad de lo compartido en sesión.</li>
+                <div class="bg-fin-midnight rounded-[3rem] p-10 text-white">
+                    <h3 class="text-2xl uppercase mb-6 border-b border-white/10 pb-4 italic">Reglas de Oro</h3>
+                    <ul class="space-y-4 text-lg italic">
+                        <li><i class="fa-solid fa-star text-fin-pink mr-3"></i> Respeto: Valoramos todas las voces.</li>
+                        <li><i class="fa-solid fa-lock text-fin-blue mr-3"></i> Confianza: Espacio seguro y privado.</li>
+                        <li><i class="fa-solid fa-rocket text-fin-pink mr-3"></i> Crecimiento: ¡Recién empezamos!</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="slide-1" class="slide">
-            <div class="card-content">
-                <span class="text-fin-blue uppercase text-sm tracking-widest mb-4 block">SESIÓN 1: COMPARTE CON CUIDADO</span>
-                <h2 class="text-6xl uppercase tracking-tighter mb-8 text-fin-midnight">Tu Reputación <span class="text-fin-blue">Digital</span></h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="space-y-6">
-                        <p class="text-xl opacity-80">Aprende a diferenciar entre información personal y privada. El secreto de un líder financiero es saber qué comunicar y a quién.</p>
-                        <ul class="space-y-4 text-sm">
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-info text-fin-blue mt-1"></i> <strong>Huella Digital:</strong> El registro permanente de tu actividad.</li>
-                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-info text-fin-blue mt-1"></i> <strong>Impacto:</strong> Cómo las redes afectan tus oportunidades futuras.</li>
-                        </ul>
+            <h2 class="text-4xl uppercase mb-8 text-fin-midnight">01. Sé <span class="text-fin-blue">Inteligente</span> (Compartir con cuidado)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-[2rem] border-l-8 border-fin-blue">
+                    <h4 class="text-fin-midnight mb-4 uppercase">Conceptos Clave (Guía pág. 7-15)</h4>
+                    <ul class="space-y-3 text-sm italic opacity-80">
+                        <li><strong>Huella Digital:</strong> El rastro que dejas al navegar.</li>
+                        <li><strong>Privacidad:</strong> Qué información NO compartir (dirección, claves).</li>
+                        <li><strong>Consecuencias:</strong> Cómo una foto hoy afecta tu perfil financiero mañana.</li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-6 bg-white border-2 border-dashed border-fin-blue rounded-3xl">
+                        <span class="age-tag tag-kids">Dinámica 8-10</span>
+                        <p class="text-sm italic mt-2"><strong>"Círculo de Confianza":</strong> ¿A quién le contarías un secreto? Clasificamos información en: Público, Amigos o Privado.</p>
                     </div>
-                    <div class="bg-fin-midnight rounded-[3rem] p-10 text-white flex flex-col justify-center items-center text-center">
-                        <h4 class="mb-6 text-xl">DESAFÍO: MONTAÑA SENSATA</h4>
-                        <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata" target="_blank" class="bg-fin-blue px-10 py-5 rounded-full uppercase text-[10px] shadow-lg">Entrenar mi Juicio</a>
+                    <div class="p-6 bg-white border-2 border-dashed border-fin-pink rounded-3xl">
+                        <span class="age-tag tag-teens">Dinámica 11-17</span>
+                        <p class="text-sm italic mt-2"><strong>"El Reclutador Digital":</strong> Analizamos perfiles sociales ficticios. ¿A quién contratarías basado en su historial?</p>
                     </div>
+                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/montana-sensata" target="_blank" class="block text-center bg-fin-blue text-white py-4 rounded-full uppercase text-[10px]">Práctica: Montaña Sensata</a>
                 </div>
             </div>
         </section>
 
         <section id="slide-2" class="slide">
-            <div class="card-content">
-                <span class="text-fin-pink uppercase text-sm tracking-widest mb-4 block">SESIÓN 2: NO CAIGAS EN TRAMPAS</span>
-                <h2 class="text-6xl uppercase tracking-tighter mb-8 text-fin-midnight">Escudo contra el <span class="text-fin-pink">Fraude</span></h2>
-                <div class="grid md:grid-cols-3 gap-8 text-fin-midnight">
-                    <div class="p-8 bg-white rounded-[2.5rem] border border-fin-pink/10">
-                        <h4 class="text-fin-pink mb-3">Phishing</h4>
-                        <p class="text-xs opacity-70 italic">Identifica correos y mensajes que fingen ser de tu banco o redes sociales.</p>
+            <h2 class="text-4xl uppercase mb-8 text-fin-midnight">02. Sé <span class="text-fin-pink">Alerta</span> (No caigas en trampas)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-[2rem] border-l-8 border-fin-pink">
+                    <h4 class="text-fin-midnight mb-4 uppercase">Conceptos Clave (Guía pág. 35-43)</h4>
+                    <ul class="space-y-3 text-sm italic opacity-80">
+                        <li><strong>Phishing:</strong> Mensajes que fingen ser oficiales (bancos, juegos).</li>
+                        <li><strong>Señales de Alerta:</strong> Errores ortográficos, sentido de urgencia.</li>
+                        <li><strong>Verificación:</strong> Siempre confirma la fuente antes de hacer clic.</li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-6 bg-white border-2 border-dashed border-fin-blue rounded-3xl">
+                        <span class="age-tag tag-kids">Dinámica 8-10</span>
+                        <p class="text-sm italic mt-2"><strong>"¿Real o Truco?":</strong> Vemos mensajes de "ganaste gemas gratis". Identificamos el truco visual.</p>
                     </div>
-                    <div class="p-8 bg-white rounded-[2.5rem] border border-fin-pink/10">
-                        <h4 class="text-fin-pink mb-3">Río de Realidad</h4>
-                        <p class="text-xs opacity-70 italic">Aprende que no todo lo "gratis" o "urgente" en internet es real.</p>
+                    <div class="p-6 bg-white border-2 border-dashed border-fin-pink rounded-3xl">
+                        <span class="age-tag tag-teens">Dinámica 11-17</span>
+                        <p class="text-sm italic mt-2"><strong>"Ingeniería Social":</strong> Analizamos cómo un mensaje de SMS puede intentar robar el acceso a tu cuenta bancaria.</p>
                     </div>
-                    <div class="flex flex-col justify-center">
-                        <a href="https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad" target="_blank" class="bg-fin-gradient text-white py-6 rounded-full text-center uppercase text-[10px] shadow-2xl">Detectar Trampas</a>
-                    </div>
+                    <a href="https://beinternetawesome.withgoogle.com/es_es/interland/destino/rio-de-realidad" target="_blank" class="block text-center bg-fin-gradient text-white py-4 rounded-full uppercase text-[10px]">Práctica: Río de Realidad</a>
                 </div>
             </div>
         </section>
 
         <section id="slide-3" class="slide">
-            <div class="bg-fin-midnight rounded-[4rem] p-16 text-white relative overflow-hidden h-full flex flex-col justify-center">
-                <span class="text-fin-blue uppercase text-sm tracking-widest mb-4 block">SESIÓN 3: PROTEGE TUS SECRETOS</span>
-                <h2 class="text-7xl uppercase tracking-tighter mb-10 text-white">Blindaje de <span class="text-fin-blue">Activos</span></h2>
-                <div class="max-w-2xl italic space-y-8">
-                    <p class="text-2xl opacity-80">Tus contraseñas son las llaves de tu bóveda. En esta sesión dominaremos la creación de claves robustas y el 2FA.</p>
-                    <div class="flex gap-4">
-                        <div class="px-6 py-3 border border-white/20 rounded-full text-xs">#SeguridadBancaria</div>
-                        <div class="px-6 py-3 border border-white/20 rounded-full text-xs">#BóvedaDigital</div>
-                    </div>
-                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro" target="_blank" class="inline-block bg-fin-blue px-14 py-6 rounded-full uppercase text-xs">Asegurar mi Tesoro</a>
+            <h2 class="text-4xl uppercase mb-8 text-fin-midnight">03. Sé <span class="text-fin-blue">Seguro</span> (Protege tus secretos)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-[2rem] border-l-8 border-fin-midnight">
+                    <h4 class="text-fin-midnight mb-4 uppercase">Conceptos Clave (Guía pág. 53-59)</h4>
+                    <ul class="space-y-3 text-sm italic opacity-80">
+                        <li><strong>Claves Robustas:</strong> Combinación de símbolos, números y letras.</li>
+                        <li><strong>Multifactor (2FA):</strong> Una segunda capa de seguridad (ej: código al celular).</li>
+                        <li><strong>Gestión:</strong> No usar la misma clave para todo.</li>
+                    </ul>
                 </div>
-                <i class="fa-solid fa-lock absolute -bottom-10 -right-10 text-[20rem] opacity-5"></i>
+                <div class="space-y-4">
+                    <div class="p-6 bg-white border-2 border-dashed border-fin-blue rounded-3xl">
+                        <span class="age-tag tag-kids">Dinámica 8-10</span>
+                        <p class="text-sm italic mt-2"><strong>"La Caja Fuerte":</strong> Creamos contraseñas basadas en frases de cuentos y las transformamos en códigos.</p>
+                    </div>
+                    <div class="p-6 bg-white border-2 border-dashed border-fin-pink rounded-3xl">
+                        <span class="age-tag tag-teens">Dinámica 11-17</span>
+                        <p class="text-sm italic mt-2"><strong>"Hackers vs Seguros":</strong> Evaluamos cuánto tiempo tardaría una computadora en adivinar diferentes claves.</p>
+                    </div>
+                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/torre-del-tesoro" target="_blank" class="block text-center bg-fin-midnight text-white py-4 rounded-full uppercase text-[10px]">Práctica: Torre del Tesoro</a>
+                </div>
             </div>
         </section>
 
         <section id="slide-4" class="slide">
-            <div class="card-content border-l-[16px] border-fin-midnight">
-                <span class="text-fin-midnight opacity-50 uppercase text-sm tracking-widest mb-4 block">SESIÓN 4: SER AMABLE ES GENIAL</span>
-                <h2 class="text-6xl uppercase tracking-tighter mb-8 text-fin-midnight">Liderazgo y <span class="text-gradient">Netiqueta</span></h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <p class="text-xl italic opacity-80">Convertirse en un líder digital implica combatir el ciberacoso y fomentar un entorno positivo. La educación financiera también es ética.</p>
-                    <div class="flex items-center gap-8">
-                        <i class="fa-solid fa-users text-7xl text-fin-pink"></i>
-                        <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable" target="_blank" class="bg-fin-midnight text-white px-12 py-5 rounded-full uppercase text-[10px]">Entrar al Reino</a>
+            <h2 class="text-4xl uppercase mb-8 text-fin-midnight">04. Sé <span class="text-gradient">Amable</span> (Netiqueta)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-[2rem] border-l-8 border-fin-blue">
+                    <h4 class="text-fin-midnight mb-4 uppercase">Conceptos Clave (Guía pág. 67-75)</h4>
+                    <ul class="space-y-3 text-sm italic opacity-80">
+                        <li><strong>Empatía Digital:</strong> Pensar antes de comentar.</li>
+                        <li><strong>Bloquear y Reportar:</strong> Herramientas ante el ciberacoso.</li>
+                        <li><strong>Liderazgo:</strong> Ser quien apoya, no quien destruye.</li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-6 bg-white border-2 border-dashed border-fin-blue rounded-3xl">
+                        <span class="age-tag tag-kids">Dinámica 8-10</span>
+                        <p class="text-sm italic mt-2"><strong>"El Semáforo":</strong> Mensajes en Verde (amables), Amarillo (dudosos) y Rojo (crueles). ¿Cómo reaccionamos?</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="slide-5" class="slide">
-            <div class="grid md:grid-cols-5 gap-8">
-                <div class="md:col-span-3 p-16 bg-fin-gradient rounded-[4rem] text-white">
-                    <h2 class="text-7xl uppercase tracking-tighter mb-8">Dominio <br>Final</h2>
-                    <p class="text-2xl italic opacity-90 mb-10">Has completado los fundamentos. Es hora de explorar Interland libremente y consolidar tu seguridad digital.</p>
-                    <p class="text-[12px] tracking-[0.4em] uppercase font-bold">¡RECIÉN ESTAMOS EMPEZANDO!</p>
-                </div>
-                <div class="md:col-span-2 card-content border-4 border-fin-midnight flex flex-col items-center justify-center text-center">
-                    <h3 class="text-3xl uppercase mb-8 text-fin-midnight">Mapa <br>Completo</h3>
-                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" target="_blank" class="w-full bg-fin-midnight text-white py-6 rounded-3xl font-black uppercase text-xs shadow-2xl">Explorar Interland</a>
+                    <div class="p-6 bg-white border-2 border-dashed border-fin-pink rounded-3xl">
+                        <span class="age-tag tag-teens">Dinámica 11-17</span>
+                        <p class="text-sm italic mt-2"><strong>"Debate de Casos":</strong> Analizamos situaciones de la pág. 75. ¿Denunciarías una cuenta falsa de un amigo?</p>
+                    </div>
+                    <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/reino-amable" target="_blank" class="block text-center bg-fin-pink text-white py-4 rounded-full uppercase text-[10px]">Práctica: Reino Amable</a>
                 </div>
             </div>
         </section>
